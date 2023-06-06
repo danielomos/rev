@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="retailercoverageareaVM" type="com.revomvpandriodapp.app.modules.retailercoveragearea.data.viewmodel.RetailercoverageareaVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnarrowleft"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_50">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_12pxh"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_width="@dimen/_6pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtSelectBusiness"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_31pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{retailercoverageareaVM.retailercoverageareaModel.txtSelectBusiness}"
+            style="@style/txtRobotoromanmedium24" tools:text="@string/msg_select_business"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center_horizontal"
+            android:id="@+id/recyclerAreaslist"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3" tools:listitem="@layout/row_areaslist"/>
+    </LinearLayout>
+</layout>

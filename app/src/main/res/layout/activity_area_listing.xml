@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="areaListingVM" type="com.revomvpandriodapp.app.modules.arealisting.data.viewmodel.AreaListingVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearAreaListing"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_50">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_12pxh"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_width="@dimen/_6pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtAvailableArea"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_31pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{areaListingVM.areaListingModel.txtAvailableArea}"
+            style="@style/txtRobotoromanmedium24" tools:text="@string/lbl_available_area"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center_horizontal"
+            android:id="@+id/recyclerListlanguage"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3" tools:listitem="@layout/row_listlanguage"/>
+    </LinearLayout>
+</layout>

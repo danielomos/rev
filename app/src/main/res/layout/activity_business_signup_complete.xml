@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="businessSignupCompleteVM" type="com.revomvpandriodapp.app.modules.businesssignupcomplete.data.viewmodel.BusinessSignupCompleteVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearBusinesssignup"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumnvector"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylecornerRadius_2">
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearEmailSuccess"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius_2">
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearMobilesuccess"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStylewhite_3">
+                    <FrameLayout android:id="@+id/frameStackvector"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="@dimen/_100pxv"
+                        android:layout_marginEnd="@dimen/_17pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_130pxv"
+                        android:layout_width="@dimen/_100pxh" style="@style/groupStyleblue_A400cornerRadius">
+                        <ImageView android:id="@+id/imageVector"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_marginBottom="@dimen/_39pxv"
+                            android:layout_marginEnd="@dimen/_33pxh"
+                            android:layout_marginStart="@dimen/_33pxh"
+                            android:layout_marginTop="@dimen/_37pxv"
+                            android:layout_width="@dimen/_33pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_vector"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_vector"/>
+                    </FrameLayout>
+                    <TextView android:gravity="center_horizontal"
+                        android:id="@+id/txtCongratsSignU"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_17pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_59pxv"
+                        android:layout_width="match_parent"
+                        android:text="@{businessSignupCompleteVM.businessSignupCompleteModel.txtCongratsSignU}"
+                        style="@style/txtRobotoromanmedium34" tools:text="@string/msg_congrats_sign"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:ellipsize="end" android:gravity="center"
+                        android:id="@+id/btnContinue"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_15pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_29pxv"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:paddingEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_30pxh"
+                        android:paddingTop="@dimen/_15pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_continue"
+                        android:textAllCaps="false"
+                        style="@style/btnSolidRoundedOutline" tools:text="@string/lbl_continue"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
