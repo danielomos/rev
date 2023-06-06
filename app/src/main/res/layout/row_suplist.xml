@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="suplistRowModel" type="com.revomvpandriodapp.app.modules.suplist.data.model.SuplistRowModel"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumniconfortynine"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_1">
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearRowiconfortynine"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="wrap_content" android:orientation="horizontal">
+            <FrameLayout android:id="@+id/frameIcbaselineapp"
+                android:layout_height="@dimen/_36pxv"
+                android:layout_width="@dimen/_32pxh" style="@style/groupStylegray_100cornerRadius">
+                <ImageView android:id="@+id/imageIconFortyNine"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/_25pxh"
+                    android:layout_marginBottom="@dimen/_5pxv"
+                    android:layout_marginEnd="@dimen/_4pxh"
+                    android:layout_marginStart="@dimen/_4pxh"
+                    android:layout_marginTop="@dimen/_5pxv"
+                    android:layout_width="@dimen/_23pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_youngwomansit"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_youngwomansit"/>
+            </FrameLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearColumnrevogas"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2pxv"
+                android:layout_marginStart="@dimen/_12pxh"
+                android:layout_marginTop="@dimen/_2pxv"
+                android:layout_weight="0.81" android:layout_width="0dp" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtRevoGas"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{suplistRowModel.txtRevoGas}"
+                    style="@style/txtRobotoromanregular15_2" tools:text="@string/lbl_revo_gas"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txt10YabaRoad"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{suplistRowModel.txt10YabaRoad}"
+                    style="@style/txtRobotoromanregular10_2" tools:text="@string/msg_10_yaba_road"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearRowframe247"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_5pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtFrame247"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2pxv"
+                android:layout_marginTop="@dimen/_2pxv"
+                android:layout_weight="0.21" android:layout_width="0dp"
+                android:paddingBottom="@dimen/_5pxv"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_5pxv"
+                android:singleLine="true"
+                android:text="@{suplistRowModel.txtFrame247}"
+                style="@style/txtSolidRounded" tools:text="@string/lbl_800"/>
+            <TextView android:ellipsize="end" android:id="@+id/txtKg"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_4pxv"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginTop="@dimen/_7pxv"
+                android:layout_weight="0.09" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{suplistRowModel.txtKg}"
+                style="@style/txtRobotoromanregular17" tools:text="@string/lbl_kg"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnShopsDetails"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_9pxh"
+                android:layout_weight="0.69" android:layout_width="0dp"
+                android:paddingBottom="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_6pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_shop_s_details"
+                android:textAllCaps="false"
+                style="@style/btnRoundedOutline_2" tools:text="@string/lbl_shop_s_details"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

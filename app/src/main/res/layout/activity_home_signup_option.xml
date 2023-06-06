@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="homeSignupOptionVM" type="com.revomvpandriodapp.app.modules.homesignupoption.data.viewmodel.HomeSignupOptionVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearHomeSignUpOpt"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_12pxh"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_width="@dimen/_6pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+        <ImageView android:id="@+id/imageLogo"
+            android:layout_gravity="end"
+            android:layout_height="@dimen/_215pxh"
+            android:layout_marginEnd="@dimen/_56pxh"
+            android:layout_marginStart="@dimen/_56pxh"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_width="@dimen/_255pxh"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_youngwomansit}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_youngwomansit"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtSignUpWith"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{homeSignupOptionVM.homeSignupOptionModel.txtSignUpWith}"
+            style="@style/txtRobotoromanmedium34" tools:text="@string/lbl_sign_up_with"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnAnEmail"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_15pxv" android:singleLine="true"
+            android:text="@string/lbl_an_email"
+            android:textAllCaps="false" style="@style/btnRoundedOutline" tools:text="@string/lbl_an_email"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnAMobileNumberOne"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_11pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_15pxv" android:singleLine="true"
+            android:text="@string/lbl_a_mobile_number"
+            android:textAllCaps="false" style="@style/btnRoundedOutline" tools:text="@string/lbl_a_mobile_number"/>
+    </LinearLayout>
+</layout>

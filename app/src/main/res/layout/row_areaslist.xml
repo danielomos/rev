@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="areaslistRowModel" type="com.revomvpandriodapp.app.modules.retailercoveragearea.data.model.AreaslistRowModel"/>
+    </data>
+    <TextView android:ellipsize="end" android:id="@+id/txtLanguage"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/_17pxv"
+        android:paddingEnd="@dimen/_30pxh"
+        android:paddingStart="@dimen/_18pxh"
+        android:paddingTop="@dimen/_17pxv" android:singleLine="true"
+        android:text="@{areaslistRowModel.txtLanguage}"
+        style="@style/txtSolidRoundedOutline" tools:text="@string/lbl_ikorodu2"/>
+</layout>
