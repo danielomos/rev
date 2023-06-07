@@ -10,23 +10,13 @@
         android:layout_marginStart="@dimen/_7pxh"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylewhite_A700">
-        <LinearLayout android:id="@+id/linearRowellipsenineteen"
-            android:layout_height="wrap_content"
+        <View
+            android:background="@drawable/rectangle_bg_white_a700_border_gray_101_radius_24_795"
+            android:id="@+id/viewEllipseNineteen"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_45pxv"
             android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginStart="@dimen/_8pxh"
-            android:layout_width="match_parent" android:orientation="horizontal">
-            <View
-                android:background="@drawable/rectangle_bg_white_a700_border_gray_101_radius_24_795"
-                android:id="@+id/viewEllipseNineteen"
-                android:layout_height="@dimen/_45pxv" android:layout_width="@dimen/_49pxh"/>
-            <ImageView android:id="@+id/imageEllipseTwenty"
-                android:layout_height="@dimen/_45pxh"
-                android:layout_marginStart="@dimen/_242pxh"
-                android:layout_width="@dimen/_49pxh"
-                android:scaleType="centerCrop" circular="@{true}"
-                imageRes="@{@drawable/img_ellipse20}"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse20"/>
-        </LinearLayout>
+            android:layout_marginStart="@dimen/_8pxh" android:layout_width="@dimen/_49pxh"/>
         <LinearLayout android:gravity="start"
             android:id="@+id/linearRowhello"
             android:layout_height="wrap_content"
@@ -70,7 +60,7 @@
             android:singleLine="true"
             android:text="@{gasmancontinerVM.gasmancontinerModel.txtDeliverCooking}"
             style="@style/txtRobotoromanregular17" tools:text="@string/msg_deliver_cooking"/>
-        <LinearLayout android:gravity="center_horizontal"
+        <LinearLayout android:gravity="start"
             android:id="@+id/linearColumngroup237"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_9pxh"
@@ -82,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_14pxh"
                 android:layout_marginStart="@dimen/_14pxh"
-                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginTop="@dimen/_7pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <LinearLayout android:id="@+id/linearRowgroup237"
                     android:layout_height="wrap_content"
@@ -101,14 +91,15 @@
                         android:id="@+id/linearColumnretailertextfo"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_1pxv"
-                        android:layout_marginStart="@dimen/_9pxh"
+                        android:layout_marginStart="@dimen/_8pxh"
                         android:layout_marginTop="@dimen/_2pxv"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.61"
                         android:layout_width="0dp" android:orientation="vertical">
                         <TextView android:ellipsize="end"
                             android:gravity="center_horizontal"
                             android:id="@+id/txtRetailerTextFo"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_1pxh"
                             android:layout_width="match_parent"
                             android:singleLine="true"
                             android:text="@{gasmancontinerVM.gasmancontinerModel.txtRetailerTextFo}"
@@ -116,7 +107,7 @@
                         <TextView android:ellipsize="end"
                             android:id="@+id/txtSeriaIdTextFor"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/_9pxh"
+                            android:layout_marginEnd="@dimen/_10pxh"
                             android:layout_marginTop="@dimen/_1pxv"
                             android:layout_width="match_parent"
                             android:singleLine="true"
@@ -135,18 +126,106 @@
                     android:minHeight="@dimen/_30pxv"
                     android:progressDrawable="@drawable/layer_list_border_black_900_7f_radius_10" style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
             </LinearLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:gravity="center_horizontal"
-                android:id="@+id/recyclerListsellingPrice"
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowsellingPrice"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_20pxv"
+                android:layout_marginBottom="@dimen/_21pxv"
                 android:layout_marginEnd="@dimen/_14pxh"
                 android:layout_marginStart="@dimen/_14pxh"
-                android:layout_marginTop="@dimen/_10pxv"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                itemSpace="@{@dimen/_136pxh}" tools:itemCount="2" tools:listitem="@layout/row_listselling_price"/>
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearColumnsellingPrice"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.73"
+                    android:layout_width="0dp" android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:ellipsize="end" android:gravity="center"
+                        android:id="@+id/btnSellingPrice"
+                        android:layout_gravity="start"
+                        android:layout_height="@dimen/_22pxv"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_width="@dimen/_82pxh"
+                        android:paddingBottom="@dimen/_5pxv"
+                        android:paddingEnd="@dimen/_14pxh"
+                        android:paddingStart="@dimen/_14pxh"
+                        android:paddingTop="@dimen/_5pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_selling_price"
+                        android:textAllCaps="false"
+                        style="@style/btnSolidRounded" tools:text="@string/lbl_selling_price"/>
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearRown"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:layout_marginEnd="@dimen/_20pxh"
+                        android:layout_marginStart="@dimen/_20pxh"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:layout_width="wrap_content" android:orientation="horizontal">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtN"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{gasmancontinerVM.gasmancontinerModel.txtN}"
+                            style="@style/txtRobotoromanregular15" tools:text="@string/lbl_n"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtZero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_18pxh"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{gasmancontinerVM.gasmancontinerModel.txtZero}"
+                            style="@style/txtRobotoromanregular15" tools:text="@string/lbl_0_0"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearColumnstockLevelOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_weight="0.27"
+                    android:layout_width="0dp" android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:ellipsize="end" android:gravity="center"
+                        android:id="@+id/btnStockLevelOne"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/_5pxv"
+                        android:paddingEnd="@dimen/_16pxh"
+                        android:paddingStart="@dimen/_16pxh"
+                        android:paddingTop="@dimen/_5pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_stock_level"
+                        android:textAllCaps="false"
+                        style="@style/btnSolidRounded" tools:text="@string/lbl_stock_level"/>
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearRowzeroOne"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:layout_width="wrap_content" android:orientation="horizontal">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtZeroOne"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{gasmancontinerVM.gasmancontinerModel.txtZeroOne}"
+                            style="@style/txtRobotoromanregular15" tools:text="@string/lbl_02"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtKg"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_17pxh"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{gasmancontinerVM.gasmancontinerModel.txtKg}"
+                            style="@style/txtRobotoromanregular15" tools:text="@string/lbl_kg2"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout android:id="@+id/linearRowsettings"
             android:layout_height="wrap_content"

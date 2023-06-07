@@ -17,15 +17,6 @@ data class FetchDistributorsResponsePayload(
 	val distributions: List<FetchDistributorsResponsePayloadDistributionsItem?>? = null
 )
 
-data class FetchDistributorsResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
-)
-
 data class FetchDistributorsResponsePayloadDistributionsItem(
 
 	@field:SerializedName("sellerId")
@@ -45,4 +36,13 @@ data class FetchDistributorsResponsePayloadDistributionsItem(
 
 	@field:SerializedName("sellerSellingPrice")
 	val sellerSellingPrice: String? = null
+)
+
+data class FetchDistributorsResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
 )

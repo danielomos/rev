@@ -32,16 +32,16 @@
                     android:id="@+id/txtResturantSign"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_27pxv"
+                    android:layout_marginTop="@dimen/_26pxv"
                     android:layout_width="match_parent"
                     android:singleLine="true"
                     android:text="@{businessSignUpWithNumberVM.businessSignUpWithNumberModel.txtResturantSign}"
-                    style="@style/txtRobotoromanmedium34" tools:text="@string/msg_resturant_sign"/>
+                    style="@style/txtRobotoromanmedium30" tools:text="@string/msg_resturant_sign"/>
                 <LinearLayout android:gravity="start"
                     android:id="@+id/linearBusinessSignUp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5pxh"
-                    android:layout_marginTop="@dimen/_27pxv"
+                    android:layout_marginTop="@dimen/_32pxv"
                     android:layout_width="match_parent"
                     android:orientation="vertical" style="@style/groupStylecornerRadius_1">
                     <EditText

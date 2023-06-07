@@ -44,6 +44,10 @@ class GasrequestActivity : BaseActivity<ActivityGasrequestBinding>(R.layout.acti
       this@GasrequestActivity.hideKeyboard()
       viewModel.callCreateTotalApi()
     }
+    binding.btnConfirmOrder.setOnClickListener {
+      this@GasrequestActivity.hideKeyboard()
+      viewModel.callBtnConfirmOrderCreateRefillApi()
+    }
     binding.imageArrowleft.setOnClickListener {
       finish()
     }
@@ -82,6 +86,14 @@ class GasrequestActivity : BaseActivity<ActivityGasrequestBinding>(R.layout.acti
         onSuccessCreateTotal(it)
       } else if(it is ErrorResponse)  {
         onErrorCreateTotal(it.data ?:Exception())
+      }
+    }
+    viewModel.btnConfirmOrderCreateRefillLiveData.observe(this@GasrequestActivity) {
+      if(it is SuccessResponse) {
+        val response = it.getContentIfNotHandled()
+        onSuccessbtnConfirmOrderCreateRefill(it)
+      } else if(it is ErrorResponse)  {
+        onErrorbtnConfirmOrderCreateRefill(it.data ?:Exception())
       }
     }
   }
@@ -131,6 +143,32 @@ class GasrequestActivity : BaseActivity<ActivityGasrequestBinding>(R.layout.acti
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
+      }
+    }
+  }
+
+  private
+      fun onSuccessbtnConfirmOrderCreateRefill(response: SuccessResponse<CreateRefillResponse>) {
+    viewModel.bindCreateRefillResponse(response.data)
+    val destIntent = ThankYouActivity.getIntent(this, null)
+    startActivity(destIntent)
+    finish()
+  }
+
+  private fun onErrorbtnConfirmOrderCreateRefill(exception: Exception) {
+    when(exception) {
+      is NoInternetConnection -> {
+        Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
+      }
+      is HttpException -> {
+        val errorBody = exception.response()?.errorBody()?.string()
+        val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
+            else JSONObject()
+        val errMessage = MyApp.getInstance().getString(R.string.msg_error_placing_order)
+        this@GasrequestActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
+          neutralButton {
+          }
+        }
       }
     }
   }

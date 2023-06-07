@@ -16,7 +16,7 @@ import kotlin.Unit
 class ThankYouActivity : BaseActivity<ActivityThankYouBinding>(R.layout.activity_thank_you) {
   private val viewModel: ThankYouVM by viewModels<ThankYouVM>()
 
-  private val REQUEST_CODE_HOUSEHOLDDASHBOARD_HOME_CONTAINER_ACTIVITY: Int = 221
+  private val REQUEST_CODE_HOUSEHOLDDASHBOARD_HOME_CONTAINER_ACTIVITY: Int = 350
 
 
   override fun onInitialized(): Unit {
@@ -25,9 +25,6 @@ class ThankYouActivity : BaseActivity<ActivityThankYouBinding>(R.layout.activity
   }
 
   override fun setUpClicks(): Unit {
-    binding.imageArrowleft.setOnClickListener {
-      finish()
-    }
     binding.btnBackToHomepageOne.setOnClickListener {
       val destIntent = HouseholddashboardHomeContainerActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_HOUSEHOLDDASHBOARD_HOME_CONTAINER_ACTIVITY)

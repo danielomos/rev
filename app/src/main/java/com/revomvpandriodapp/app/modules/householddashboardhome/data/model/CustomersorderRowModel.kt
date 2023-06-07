@@ -18,7 +18,7 @@ data class CustomersorderRowModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txt10042023Text: String? = MyApp.getInstance().resources.getString(R.string.lbl_10_04_2023)
+  var txtFrame247: String? = MyApp.getInstance().resources.getString(R.string.lbl_2023)
   ,
   /**
    * TODO Replace with dynamic value

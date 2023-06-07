@@ -6,7 +6,7 @@
     </data>
     <FrameLayout android:id="@+id/frameStackarrowleft"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_28pxv"
+        android:layout_marginTop="@dimen/_29pxv"
         android:layout_width="match_parent" style="@style/groupStylewhite_A700">
         <LinearLayout android:id="@+id/linearColumnarrowleft"
             android:layout_gravity="top|center"
@@ -21,33 +21,34 @@
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:layout_marginStart="@dimen/_5pxh"
                 android:layout_width="match_parent" app:contentInsetStart="0dp">
-                <LinearLayout android:id="@+id/linearRowarrowleft"
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearRowarrowleft"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent" android:orientation="horizontal">
                     <ImageView android:id="@+id/imageArrowleft"
                         android:layout_height="@dimen/_12pxh"
-                        android:layout_marginBottom="@dimen/_9pxv"
-                        android:layout_marginTop="@dimen/_7pxv"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginTop="@dimen/_6pxv"
                         android:layout_width="@dimen/_6pxh"
                         android:scaleType="fitXY"
                         android:src="@drawable/img_arrowleft"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
                     <TextView android:ellipsize="end"
-                        android:id="@+id/txtOrders"
+                        android:id="@+id/txtOrdersHistory"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_140pxh"
-                        android:layout_weight="0.92"
+                        android:layout_marginStart="@dimen/_84pxh"
+                        android:layout_weight="0.96"
                         android:layout_width="0dp"
                         android:singleLine="true"
-                        android:text="@{gasmanorderslistVM.gasmanorderslistModel.txtOrders}"
-                        style="@style/txtRobotoromanmedium24" tools:text="@string/lbl_orders"/>
+                        android:text="@{gasmanorderslistVM.gasmanorderslistModel.txtOrdersHistory}"
+                        style="@style/txtRobotoromanmedium24" tools:text="@string/lbl_orders_history"/>
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
             <LinearLayout android:id="@+id/linearRownew"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_4pxh"
                 android:layout_marginStart="@dimen/_11pxh"
-                android:layout_marginTop="@dimen/_24pxv"
+                android:layout_marginTop="@dimen/_23pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtNew"

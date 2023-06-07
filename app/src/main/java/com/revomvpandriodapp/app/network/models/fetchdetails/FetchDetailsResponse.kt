@@ -20,6 +20,42 @@ data class FetchDetailsResponseMetadata(
 	val timestamp: String? = null
 )
 
+data class FetchDetailsResponsePayloadSellerOrdersItem(
+
+	@field:SerializedName("orderCustomerAddress")
+	val orderCustomerAddress: String? = null,
+
+	@field:SerializedName("orderAmount")
+	val orderAmount: String? = null,
+
+	@field:SerializedName("orderId")
+	val orderId: String? = null,
+
+	@field:SerializedName("pickUpKg")
+	val pickUpKg: String? = null,
+
+	@field:SerializedName("orderKg")
+	val orderKg: String? = null,
+
+	@field:SerializedName("orderCusFullName")
+	val orderCusFullName: String? = null,
+
+	@field:SerializedName("orderStatus")
+	val orderStatus: Int? = null,
+
+	@field:SerializedName("orderCusPhoneNumber")
+	val orderCusPhoneNumber: String? = null,
+
+	@field:SerializedName("orderCode")
+	val orderCode: String? = null,
+
+	@field:SerializedName("orderCreatedDate")
+	val orderCreatedDate: String? = null,
+
+	@field:SerializedName("deliveryKg")
+	val deliveryKg: String? = null
+)
+
 data class FetchDetailsResponsePayload(
 
 	@field:SerializedName("serialNumber")
@@ -72,40 +108,4 @@ data class FetchDetailsResponsePayload(
 
 	@field:SerializedName("email")
 	val email: String? = null
-)
-
-data class FetchDetailsResponsePayloadSellerOrdersItem(
-
-	@field:SerializedName("orderCustomerAddress")
-	val orderCustomerAddress: String? = null,
-
-	@field:SerializedName("orderAmount")
-	val orderAmount: String? = null,
-
-	@field:SerializedName("orderId")
-	val orderId: String? = null,
-
-	@field:SerializedName("pickUpKg")
-	val pickUpKg: String? = null,
-
-	@field:SerializedName("orderKg")
-	val orderKg: String? = null,
-
-	@field:SerializedName("orderCusFullName")
-	val orderCusFullName: String? = null,
-
-	@field:SerializedName("orderStatus")
-	val orderStatus: Int? = null,
-
-	@field:SerializedName("orderCusPhoneNumber")
-	val orderCusPhoneNumber: String? = null,
-
-	@field:SerializedName("orderCode")
-	val orderCode: String? = null,
-
-	@field:SerializedName("orderCreatedDate")
-	val orderCreatedDate: String? = null,
-
-	@field:SerializedName("deliveryKg")
-	val deliveryKg: String? = null
 )

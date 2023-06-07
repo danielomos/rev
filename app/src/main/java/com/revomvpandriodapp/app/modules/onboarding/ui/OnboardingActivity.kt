@@ -1,8 +1,5 @@
 package com.revomvpandriodapp.app.modules.onboarding.ui
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
@@ -33,11 +30,5 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>(R.layout.acti
     companion object {
       const val TAG: String = "ONBOARDING_ACTIVITY"
 
-
-      fun getIntent(context: Context, bundle: Bundle?): Intent {
-        val destIntent = Intent(context, OnboardingActivity::class.java)
-        destIntent.putExtra("bundle", bundle)
-        return destIntent
-      }
     }
   }

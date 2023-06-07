@@ -11,15 +11,6 @@ data class FetchDetailResponse(
 	val payload: FetchDetailResponsePayload? = null
 )
 
-data class FetchDetailResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
-)
-
 data class FetchDetailResponsePayload(
 
 	@field:SerializedName("sellerId")
@@ -39,4 +30,13 @@ data class FetchDetailResponsePayload(
 
 	@field:SerializedName("sellerSellingPrice")
 	val sellerSellingPrice: String? = null
+)
+
+data class FetchDetailResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
 )

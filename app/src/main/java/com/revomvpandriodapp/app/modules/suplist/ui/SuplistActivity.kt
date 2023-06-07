@@ -34,8 +34,6 @@ import retrofit2.HttpException
 class SuplistActivity : BaseActivity<ActivitySuplistBinding>(R.layout.activity_suplist) {
   private val viewModel: SuplistVM by viewModels<SuplistVM>()
 
-  private val REQUEST_CODE_GASREQUEST_ACTIVITY: Int = 562
-
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     val suplistAdapter = SuplistAdapter(viewModel.suplistList.value?:mutableListOf())
@@ -71,7 +69,7 @@ class SuplistActivity : BaseActivity<ActivitySuplistBinding>(R.layout.activity_s
         val destBundle = Bundle()
         destBundle.putString("sellerId",Gson().toJson(viewModel.fetchDistributorsLiveData.value?.getSuccessResponse()?.payload?.distributions?.get(position)?.sellerId))
         val destIntent = GasrequestActivity.getIntent(this, destBundle)
-        startActivityForResult(destIntent, REQUEST_CODE_GASREQUEST_ACTIVITY)
+        startActivity(destIntent)
       }
     }
   }

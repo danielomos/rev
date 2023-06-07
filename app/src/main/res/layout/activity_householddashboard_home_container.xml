@@ -5,7 +5,7 @@
         <variable name="householddashboardHomeContainerVM" type="com.revomvpandriodapp.app.modules.householddashboardhomecontainer.data.viewmodel.HouseholddashboardHomeContainerVM"/>
     </data>
     <LinearLayout android:gravity="center_horizontal"
-        android:id="@+id/linearColumnTwo"
+        android:id="@+id/linearColumnOne"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/_1pxv"
         android:layout_marginTop="@dimen/_4pxv"
@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1" android:layout_width="match_parent"/>
         <FrameLayout android:gravity="start"
-            android:id="@+id/frameBottomappbarcombinedsha"
+            android:id="@+id/frameBottomappbarcombinedshap"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_51pxv" android:layout_width="match_parent">
             <FrameLayout android:id="@+id/frameStackcombinedshape"

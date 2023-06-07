@@ -17,7 +17,6 @@ import com.revomvpandriodapp.app.extensions.isJSONObject
 import com.revomvpandriodapp.app.extensions.neutralButton
 import com.revomvpandriodapp.app.extensions.showProgressDialog
 import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.model.GasmanorderRowModel
-import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.model.ListsellingPriceRowModel
 import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.viewmodel.GasmancontinerVM
 import com.revomvpandriodapp.app.modules.retailercoveragearea.ui.RetailercoverageareaActivity
 import com.revomvpandriodapp.app.modules.retailersetstock.ui.RetailersetstockActivity
@@ -37,19 +36,6 @@ class GasmancontinerFragment :
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = arguments
-    val listsellingPriceAdapter =
-    ListsellingPriceAdapter(viewModel.listsellingPriceList.value?:mutableListOf())
-    binding.recyclerListsellingPrice.adapter = listsellingPriceAdapter
-    listsellingPriceAdapter.setOnItemClickListener(
-    object : ListsellingPriceAdapter.OnItemClickListener {
-      override fun onItemClick(view:View, position:Int, item : ListsellingPriceRowModel) {
-        onClickRecyclerListsellingPrice(view, position, item)
-      }
-    }
-    )
-    viewModel.listsellingPriceList.observe(requireActivity()) {
-      listsellingPriceAdapter.updateData(it)
-    }
     val gasmanorderAdapter =
     GasmanorderAdapter(viewModel.gasmanorderList.value?:mutableListOf())
     binding.recyclerGasmanorder.adapter = gasmanorderAdapter
@@ -79,15 +65,6 @@ class GasmancontinerFragment :
       else {
         linearColumnsettingsCondition1()
       }
-    }
-  }
-
-  fun onClickRecyclerListsellingPrice(
-    view: View,
-    position: Int,
-    item: ListsellingPriceRowModel
-  ): Unit {
-    when(view.id) {
     }
   }
 

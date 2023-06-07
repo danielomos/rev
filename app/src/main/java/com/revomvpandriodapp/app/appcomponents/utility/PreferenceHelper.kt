@@ -50,78 +50,6 @@ class PreferenceHelper {
 
   fun getAccessToken(): String? = sharedPreference.getString("accessToken", null)
 
-  fun setIndividualId(paramValue: Int?): Unit {
-    with(sharedPreference.edit()) {
-      this.putInt("individualId", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getIndividualId(): Int? = sharedPreference.getInt("individualId", 0)
-
-  fun setEmail(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("email", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getEmail(): String? = sharedPreference.getString("email", null)
-
-  fun setFamilyName(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("familyName", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getFamilyName(): String? = sharedPreference.getString("familyName", null)
-
-  fun setGivenName(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("givenName", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getGivenName(): String? = sharedPreference.getString("givenName", null)
-
-  fun setPhoneNumber(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("phoneNumber", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getPhoneNumber(): String? = sharedPreference.getString("phoneNumber", null)
-
-  fun setGender(paramValue: Int?): Unit {
-    with(sharedPreference.edit()) {
-      this.putInt("gender", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getGender(): Int? = sharedPreference.getInt("gender", 0)
-
-  fun setManage(paramValue: Int?): Unit {
-    with(sharedPreference.edit()) {
-      this.putInt("manage", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getManage(): Int? = sharedPreference.getInt("manage", 0)
-
-  fun setUserType(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("userType", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getUserType(): String? = sharedPreference.getString("userType", null)
-
   fun setOnBoarded(paramValue: Int?): Unit {
     with(sharedPreference.edit()) {
       this.putInt("onBoarded", paramValue!!)
@@ -131,41 +59,14 @@ class PreferenceHelper {
 
   fun getOnBoarded(): Int? = sharedPreference.getInt("onBoarded", 0)
 
-  fun setAddress(paramValue: String?): Unit {
+  fun setUserType(paramValue: String?): Unit {
     with(sharedPreference.edit()) {
-      this.putString("address", paramValue!!)
+      this.putString("userType", paramValue!!)
       apply()
     }
   }
 
-  fun getAddress(): String? = sharedPreference.getString("address", null)
-
-  fun setDefaultProfileId(paramValue: Int?): Unit {
-    with(sharedPreference.edit()) {
-      this.putInt("defaultProfileId", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getDefaultProfileId(): Int? = sharedPreference.getInt("defaultProfileId", 0)
-
-  fun setRetailerId(paramValue: Int?): Unit {
-    with(sharedPreference.edit()) {
-      this.putInt("retailerId", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getRetailerId(): Int? = sharedPreference.getInt("retailerId", 0)
-
-  fun setServiceArea(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("serviceArea", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getServiceArea(): String? = sharedPreference.getString("serviceArea", null)
+  fun getUserType(): String? = sharedPreference.getString("userType", null)
 
   fun setSellerAddress(paramValue: String?): Unit {
     with(sharedPreference.edit()) {

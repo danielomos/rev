@@ -35,12 +35,12 @@ class GasmandashboardHomeActivity :
   }
 
   override fun setUpClicks(): Unit {
-    binding.linearColumnhome.setOnClickListener {
-      // TODO please, add your navigation code here
-    }
     binding.linearColumnvolume.setOnClickListener {
       val destIntent = GasmanorderslistActivity.getIntent(this, null)
       startActivity(destIntent)
+    }
+    binding.linearColumnhome.setOnClickListener {
+      // TODO please, add your navigation code here
     }
   }
 

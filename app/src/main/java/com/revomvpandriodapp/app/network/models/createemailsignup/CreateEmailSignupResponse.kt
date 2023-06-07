@@ -11,6 +11,15 @@ data class CreateEmailSignupResponse(
 	val payload: CreateEmailSignupResponsePayload? = null
 )
 
+data class CreateEmailSignupResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
+)
+
 data class CreateEmailSignupResponsePayload(
 
 	@field:SerializedName("accountId")
@@ -21,13 +30,4 @@ data class CreateEmailSignupResponsePayload(
 
 	@field:SerializedName("userId")
 	val userId: Int? = null
-)
-
-data class CreateEmailSignupResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
 )

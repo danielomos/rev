@@ -22,15 +22,11 @@ class ListiconfortynineAdapter(
   }
 
   override fun onBindViewHolder(holder: RowListiconfortynine1VH, position: Int) {
-    val listiconfortynine1RowModel = Listiconfortynine1RowModel()
-    // TODO uncomment following line after integration with data source
-    // val listiconfortynine1RowModel = list[position]
+    val listiconfortynine1RowModel = list[position]
     holder.binding.listiconfortynine1RowModel = listiconfortynine1RowModel
   }
 
-  override fun getItemCount(): Int = 2
-  // TODO uncomment following line after integration with data source
-  // return list.size
+  override fun getItemCount(): Int = list.size
 
   public fun updateData(newData: List<Listiconfortynine1RowModel>) {
     list = newData

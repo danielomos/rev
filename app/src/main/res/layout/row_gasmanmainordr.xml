@@ -100,7 +100,7 @@
                 <TextView android:ellipsize="end"
                     android:id="@+id/txt12KgTextFormFi"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.33"
+                    android:layout_weight="0.34"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{gasmanmainordrRowModel.txt12KgTextFormFi}"
                     style="@style/txtRobotoromanregular17" tools:text="@string/lbl_n"/>
@@ -108,7 +108,7 @@
                     android:id="@+id/txt12KgTextFormFiOne"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5pxh"
-                    android:layout_weight="0.67"
+                    android:layout_weight="0.66"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{gasmanmainordrRowModel.txt12KgTextFormFiOne}"
                     style="@style/txtRobotoromanregular17" tools:text="@string/lbl_0_0"/>

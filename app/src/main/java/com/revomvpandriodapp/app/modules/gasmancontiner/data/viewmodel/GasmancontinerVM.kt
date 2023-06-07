@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.revomvpandriodapp.app.appcomponents.utility.PreferenceHelper
 import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.model.GasmancontinerModel
 import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.model.GasmanorderRowModel
-import com.revomvpandriodapp.app.modules.gasmancontiner.`data`.model.ListsellingPriceRowModel
 import com.revomvpandriodapp.app.network.models.fetchdetails.FetchDetailsResponse
 import com.revomvpandriodapp.app.network.repository.NetworkRepository
 import com.revomvpandriodapp.app.network.resources.Response
@@ -23,10 +22,6 @@ class GasmancontinerVM : ViewModel(), KoinComponent {
 
 
   var navArguments: Bundle? = null
-
-
-  val listsellingPriceList: MutableLiveData<MutableList<ListsellingPriceRowModel>> =
-      MutableLiveData(mutableListOf())
 
 
   val gasmanorderList: MutableLiveData<MutableList<GasmanorderRowModel>> =
@@ -60,25 +55,18 @@ class GasmancontinerVM : ViewModel(), KoinComponent {
     val recyclerGasmanorder = response.payload?.sellerOrders?.map {
       GasmanorderRowModel(
       txtPendingTextFor = it?.orderStatus.toString(),
-      txt12KgTextFormFiOne = it?.orderAmount.toString(),
       txtWeight = it?.orderKg.toString(),
-      txt10042023Text = it?.orderCreatedDate.toString(),
+      txt12KgTextFormFiOne = it?.orderAmount.toString(),
+      txtFrame247 = it?.orderCreatedDate.toString(),
       )
       }?.toMutableList()
       gasmanorderList.value = recyclerGasmanorder
-      prefs.setRetailerId(response.payload?.retailerId)
-      prefs.setEmail(response.payload?.email)
-      prefs.setFamilyName(response.payload?.familyName)
-      prefs.setGivenName(response.payload?.givenName)
       gasmancontinerModelValue.txtRevogasTextFor = response.payload?.name.toString()
-      prefs.setPhoneNumber(response.payload?.phoneNumber)
-      prefs.setGender(response.payload?.gender)
       prefs.setOnBoarded(response.payload?.onBoarded)
-      prefs.setDefaultProfileId(response.payload?.defaultProfileId)
       prefs.setUserType(response.payload?.userType)
       gasmancontinerModelValue.txtSeriaIdTextFor = response.payload?.serialNumber.toString()
-      prefs.setAddress(response.payload?.address)
-      prefs.setServiceArea(response.payload?.serviceArea)
+      gasmancontinerModelValue.txtZero = response.payload?.sellingPrice.toString()
+      gasmancontinerModelValue.txtZeroOne = response.payload?.stockLevel.toString()
       gasmancontinerModel.value = gasmancontinerModelValue
     }
   }

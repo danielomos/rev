@@ -8,11 +8,11 @@ data class SuplistModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtRetailersin: String? = MyApp.getInstance().resources.getString(R.string.lbl_retailers_in)
+  var txtLanguage: String? = MyApp.getInstance().resources.getString(R.string.lbl_retailers)
   ,
   /**
    * TODO Replace with dynamic value
    */
-  var txtIkorodu: String? = MyApp.getInstance().resources.getString(R.string.lbl_ikorodu)
+  var txtNearYou: String? = MyApp.getInstance().resources.getString(R.string.lbl_near_you)
 
 )

@@ -55,27 +55,18 @@ class HouseholddashboardHomeVM : ViewModel(), KoinComponent {
         ?:HouseholddashboardHomeModel()
     val recyclerCustomersorder = response.payload?.customerOrders?.map {
       CustomersorderRowModel(
+      txt12KgTextFormFiOne = it?.orderAmount.toString(),
       txtPendingTextFor = it?.orderStatus.toString(),
       txtWeight = it?.orderKg.toString(),
-      txt10042023Text = it?.orderCreatedDate.toString(),
-      txt12KgTextFormFiOne = it?.orderAmount.toString(),
+      txtFrame247 = it?.orderCreatedDate.toString(),
       )
       }?.toMutableList()
       customersorderList.value = recyclerCustomersorder
-      prefs.setIndividualId(response.payload?.individualId)
-      prefs.setEmail(response.payload?.email)
-      prefs.setFamilyName(response.payload?.familyName)
-      prefs.setGivenName(response.payload?.givenName)
       householddashboardHomeModelValue.txtHouseHoldTextFOne = response.payload?.name.toString()
-      prefs.setPhoneNumber(response.payload?.phoneNumber)
-      prefs.setGender(response.payload?.gender)
-      prefs.setManage(response.payload?.manage)
+      prefs.setOnBoarded(response.payload?.onBoarded)
       prefs.setUserType(response.payload?.userType)
       householddashboardHomeModelValue.txtZeroOne = response.payload?.sellersPrice.toString()
       householddashboardHomeModelValue.txtBA1200000TextF = response.payload?.serialNumber.toString()
-      prefs.setOnBoarded(response.payload?.onBoarded)
-      prefs.setAddress(response.payload?.address)
-      prefs.setDefaultProfileId(response.payload?.defaultProfileId)
       householddashboardHomeModel.value = householddashboardHomeModelValue
     }
   }

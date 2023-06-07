@@ -11,6 +11,15 @@ data class FetchAreasResponse(
 	val payload: List<FetchAreasResponsePayloadItem?>? = null
 )
 
+data class FetchAreasResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
+)
+
 data class FetchAreasResponsePayloadItem(
 
 	@field:SerializedName("areaCode")
@@ -21,13 +30,4 @@ data class FetchAreasResponsePayloadItem(
 
 	@field:SerializedName("areaName")
 	val areaName: String? = null
-)
-
-data class FetchAreasResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
 )

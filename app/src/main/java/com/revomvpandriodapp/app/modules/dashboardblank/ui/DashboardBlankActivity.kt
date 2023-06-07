@@ -12,10 +12,10 @@ import com.revomvpandriodapp.app.constants.userType
 import com.revomvpandriodapp.app.databinding.ActivityDashboardBlankBinding
 import com.revomvpandriodapp.app.extensions.alert
 import com.revomvpandriodapp.app.extensions.neutralButton
+import com.revomvpandriodapp.app.modules.businessdashboard.ui.BusinessDashboardActivity
 import com.revomvpandriodapp.app.modules.dashboardblank.`data`.viewmodel.DashboardBlankVM
 import com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity
 import com.revomvpandriodapp.app.modules.householddashboardhomecontainer.ui.HouseholddashboardHomeContainerActivity
-import com.revomvpandriodapp.app.modules.onboarding.ui.OnboardingActivity
 import kotlin.String
 import kotlin.Unit
 import org.koin.android.ext.android.inject
@@ -30,17 +30,17 @@ class DashboardBlankActivity :
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.dashboardBlankVM = viewModel
     if(
-    prefs.getUserType() == userType.HOUSEHOLD
+    userType.HOUSEHOLD == prefs.getUserType()
     ) {
       onCreateCondition()
     }
     else if(
-    prefs.getUserType() == userType.RETAILER
+    userType.RETAILER == prefs.getUserType()
     ) {
       onCreateCondition1()
     }
     else if(
-    prefs.getUserType() == userType.BUSINESS
+    userType.BUSINESS == prefs.getUserType()
     ) {
       onCreateCondition2()
     }
@@ -54,25 +54,25 @@ class DashboardBlankActivity :
 
   private fun onCreateCondition(): Unit {
     val destIntent = HouseholddashboardHomeContainerActivity.getIntent(this, null)
+    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
     startActivity(destIntent)
-    finish()
   }
 
   private fun onCreateCondition1(): Unit {
     val destIntent = GasmandashboardHomeActivity.getIntent(this, null)
+    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
     startActivity(destIntent)
-    finish()
   }
 
   private fun onCreateCondition2(): Unit {
-    val destIntent = OnboardingActivity.getIntent(this, null)
+    val destIntent = BusinessDashboardActivity.getIntent(this, null)
+    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
     startActivity(destIntent)
-    finish()
   }
 
   private fun onCreateCondition3(): Unit {
     this@DashboardBlankActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),
-    MyApp.getInstance().getString(R.string.msg_invalid_user_profile)) {
+    MyApp.getInstance().getString(R.string.msg_invalid_user_type)) {
       neutralButton {
       }
     }

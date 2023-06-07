@@ -34,6 +34,26 @@ data class GasmancontinerModel(
   /**
    * TODO Replace with dynamic value
    */
+  var txtN: String? = MyApp.getInstance().resources.getString(R.string.lbl_n)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtZero: String? = MyApp.getInstance().resources.getString(R.string.lbl_0_0)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtZeroOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_02)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
+  var txtKg: String? = MyApp.getInstance().resources.getString(R.string.lbl_kg2)
+  ,
+  /**
+   * TODO Replace with dynamic value
+   */
   var txtQuestionsabout: String? =
       MyApp.getInstance().resources.getString(R.string.lbl_start_selling)
   ,

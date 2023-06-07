@@ -49,7 +49,7 @@
                         android:layout_marginTop="@dimen/_62pxv"
                         android:layout_width="match_parent"
                         android:text="@{gasManSignCompletedVM.gasManSignCompletedModel.txtCongratsSignU}"
-                        style="@style/txtRobotoromanmedium34" tools:text="@string/msg_congrats_sign"/>
+                        style="@style/txtRobotoromanmedium30" tools:text="@string/msg_congrats_sign"/>
                     <androidx.appcompat.widget.AppCompatButton
                         android:ellipsize="end" android:gravity="center"
                         android:id="@+id/btnContinue"
@@ -57,7 +57,7 @@
                         android:layout_marginBottom="@dimen/_20pxv"
                         android:layout_marginEnd="@dimen/_15pxh"
                         android:layout_marginStart="@dimen/_17pxh"
-                        android:layout_marginTop="@dimen/_42pxv"
+                        android:layout_marginTop="@dimen/_53pxv"
                         android:layout_width="match_parent"
                         android:paddingBottom="@dimen/_15pxv"
                         android:paddingEnd="@dimen/_30pxh"

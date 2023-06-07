@@ -35,10 +35,10 @@ import retrofit2.HttpException
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
   private val viewModel: LoginVM by viewModels<LoginVM>()
 
-  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 628
+  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 192
 
 
-  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 479
+  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 759
 
 
   override fun onInitialized(): Unit {

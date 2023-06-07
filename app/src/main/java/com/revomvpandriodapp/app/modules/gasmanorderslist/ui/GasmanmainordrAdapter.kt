@@ -21,15 +21,11 @@ class GasmanmainordrAdapter(
   }
 
   override fun onBindViewHolder(holder: RowGasmanmainordrVH, position: Int) {
-    val gasmanmainordrRowModel = GasmanmainordrRowModel()
-    // TODO uncomment following line after integration with data source
-    // val gasmanmainordrRowModel = list[position]
+    val gasmanmainordrRowModel = list[position]
     holder.binding.gasmanmainordrRowModel = gasmanmainordrRowModel
   }
 
-  override fun getItemCount(): Int = 2
-  // TODO uncomment following line after integration with data source
-  // return list.size
+  override fun getItemCount(): Int = list.size
 
   public fun updateData(newData: List<GasmanmainordrRowModel>) {
     list = newData

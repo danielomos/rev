@@ -16,6 +16,7 @@ import com.revomvpandriodapp.app.extensions.hideKeyboard
 import com.revomvpandriodapp.app.extensions.isJSONObject
 import com.revomvpandriodapp.app.extensions.neutralButton
 import com.revomvpandriodapp.app.extensions.showProgressDialog
+import com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity
 import com.revomvpandriodapp.app.modules.retailersetstock.`data`.viewmodel.RetailersetstockVM
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
 import com.revomvpandriodapp.app.network.resources.ErrorResponse
@@ -36,12 +37,14 @@ class RetailersetstockActivity :
   }
 
   override fun setUpClicks(): Unit {
-    binding.imageArrowleft.setOnClickListener {
-      finish()
-    }
     binding.btnSetStock.setOnClickListener {
       this@RetailersetstockActivity.hideKeyboard()
       viewModel.callCreateUpdateApi()
+    }
+    binding.btnBackToHomepageOne.setOnClickListener {
+      val destIntent = GasmandashboardHomeActivity.getIntent(this, null)
+      startActivity(destIntent)
+      finish()
     }
   }
 
@@ -68,7 +71,7 @@ class RetailersetstockActivity :
 
   private fun onSuccessCreateUpdate(response: SuccessResponse<CreateUpdateResponse>) {
     this@RetailersetstockActivity.alert(MyApp.getInstance().getString(R.string.lbl_successful),
-    MyApp.getInstance().getString(R.string.msg_stock_updated_succefully)) {
+    MyApp.getInstance().getString(R.string.msg_stock_successful_set)) {
       neutralButton {
       }
     }
@@ -84,7 +87,7 @@ class RetailersetstockActivity :
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
             else JSONObject()
-        val errMessage = MyApp.getInstance().getString(R.string.msg_error_updating_stock)
+        val errMessage = MyApp.getInstance().getString(R.string.msg_error_setting_stock)
         this@RetailersetstockActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {
           }

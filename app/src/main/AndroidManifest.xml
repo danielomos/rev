@@ -45,6 +45,8 @@
         <activity
             android:name="com.revomvpandriodapp.app.modules.gasmansignupwithemail.ui.GasManSignUpWithEmailActivity" android:screenOrientation="portrait"/>
         <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmanorderpage.ui.GasmanorderpageActivity" android:screenOrientation="portrait"/>
+        <activity
             android:name="com.revomvpandriodapp.app.modules.gasmanorderslist.ui.GasmanorderslistActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.revomvpandriodapp.app.modules.retailercoveragearea.ui.RetailercoverageareaActivity" android:screenOrientation="portrait"/>
@@ -62,6 +64,8 @@
             android:name="com.revomvpandriodapp.app.modules.businesssignupoption.ui.BusinessSignupOptionActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.revomvpandriodapp.app.modules.login.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.cusorderpage.ui.CusorderpageActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.revomvpandriodapp.app.modules.homemobiletoken.ui.HomeMobiletokenActivity" android:screenOrientation="portrait"/>
         <activity

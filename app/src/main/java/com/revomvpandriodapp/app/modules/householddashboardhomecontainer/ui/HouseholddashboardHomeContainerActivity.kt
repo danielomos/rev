@@ -21,7 +21,7 @@ class HouseholddashboardHomeContainerActivity :
   private val viewModel: HouseholddashboardHomeContainerVM by
       viewModels<HouseholddashboardHomeContainerVM>()
 
-  private val REQUEST_CODE_CUSORDERSLIST_ACTIVITY: Int = 418
+  private val REQUEST_CODE_CUSORDERSLIST_ACTIVITY: Int = 776
 
 
   override fun onInitialized(): Unit {
@@ -41,6 +41,10 @@ class HouseholddashboardHomeContainerActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.linearColumnvolume.setOnClickListener {
+      val destIntent = CusorderslistActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_CUSORDERSLIST_ACTIVITY)
+    }
     binding.linearColumnhome.setOnClickListener {
       val destFragment = HouseholddashboardHomeFragment.getInstance(null)
       this.loadFragment(
@@ -53,10 +57,6 @@ class HouseholddashboardHomeContainerActivity :
       enter = null,
       exit = null,
       )
-    }
-    binding.linearColumnvolume.setOnClickListener {
-      val destIntent = CusorderslistActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_CUSORDERSLIST_ACTIVITY)
     }
   }
 

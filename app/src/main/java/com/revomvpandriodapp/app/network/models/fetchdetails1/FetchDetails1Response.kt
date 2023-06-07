@@ -11,6 +11,15 @@ data class FetchDetails1Response(
 	val payload: FetchDetails1ResponsePayload? = null
 )
 
+data class FetchDetails1ResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
+)
+
 data class FetchDetails1ResponsePayload(
 
 	@field:SerializedName("serialNumber")
@@ -65,15 +74,6 @@ data class FetchDetails1ResponsePayload(
 	val email: String? = null
 )
 
-data class FetchDetails1ResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
-)
-
 data class FetchDetails1ResponsePayloadCustomerOrdersItem(
 
 	@field:SerializedName("orderAmount")
@@ -92,7 +92,7 @@ data class FetchDetails1ResponsePayloadCustomerOrdersItem(
 	val orderSelPhoneNumber: String? = null,
 
 	@field:SerializedName("orderSelFullName")
-	val orderSelFullName: Any? = null,
+	val orderSelFullName: String? = null,
 
 	@field:SerializedName("orderStatus")
 	val orderStatus: Int? = null,

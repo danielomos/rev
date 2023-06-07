@@ -55,7 +55,7 @@ class SuplistVM : ViewModel(), KoinComponent {
       SuplistRowModel(
       txtRevoGas = it?.sellerName.toString(),
       txt10YabaRoad = it?.sellerAddress.toString(),
-      txtFrame247 = it?.sellerSellingPrice.toString(),
+      etFrame247Value = it?.sellerSellingPrice.toString(),
       )
       }?.toMutableList()
       suplistList.value = recyclerSuplist

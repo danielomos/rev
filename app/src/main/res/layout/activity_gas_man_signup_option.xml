@@ -32,18 +32,18 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16pxh"
             android:layout_marginStart="@dimen/_16pxh"
-            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_marginTop="@dimen/_13pxv"
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{gasManSignupOptionVM.gasManSignupOptionModel.txtSignUpWith}"
-            style="@style/txtRobotoromanmedium34" tools:text="@string/lbl_sign_up_with"/>
+            style="@style/txtRobotoromanmedium30" tools:text="@string/lbl_sign_up_with"/>
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnAnEmail"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16pxh"
             android:layout_marginStart="@dimen/_16pxh"
-            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_marginTop="@dimen/_45pxv"
             android:layout_width="match_parent"
             android:paddingBottom="@dimen/_15pxv"
             android:paddingEnd="@dimen/_30pxh"

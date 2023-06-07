@@ -8,7 +8,8 @@ data class CusorderslistModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtOrders: String? = MyApp.getInstance().resources.getString(R.string.lbl_orders)
+  var txtOrdersHistory: String? =
+      MyApp.getInstance().resources.getString(R.string.lbl_orders_history)
   ,
   /**
    * TODO Replace with dynamic value

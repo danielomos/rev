@@ -44,23 +44,42 @@ class GasrequestVM : ViewModel(), KoinComponent {
   val createTotalLiveData: MutableLiveData<Response<CreateTotalResponse>> =
       MutableLiveData<Response<CreateTotalResponse>>()
 
-  fun callCreateTotalApi() {
+
+  val btnConfirmOrderCreateRefillLiveData: MutableLiveData<Response<CreateRefillResponse>> =
+      MutableLiveData<Response<CreateRefillResponse>>()
+
+  fun callBtnConfirmOrderCreateRefillApi() {
     viewModelScope.launch {
       progressLiveData.postValue(true)
-      createTotalLiveData.postValue(
-      networkRepository.createTotal(
+      btnConfirmOrderCreateRefillLiveData.postValue(
+      networkRepository.createRefill(
       contentType = """application/json""",
           authorization = prefs.getAccessToken(),
-          createTotalRequest = CreateTotalRequest(
-          refillingQuantity = gasrequestModel.value?.etLastnameValue,
-          sellerId = navArguments?.getString("sellerId"))
+          createRefillRequest = CreateRefillRequest(sellerId = navArguments?.getString("sellerId"),
+          requestedQuantity = gasrequestModel.value?.etLastnameValue)
       )
       )
       progressLiveData.postValue(false)
     }
   }
 
-  fun bindCreateTotalResponse(response: CreateTotalResponse) {
+  fun callCreateTotalApi(): Unit {
+    viewModelScope.launch {
+      progressLiveData.postValue(true)
+      createTotalLiveData.postValue(
+      networkRepository.createTotal(
+      contentType = """application/json""",
+      authorization = prefs.getAccessToken(),
+      createTotalRequest = CreateTotalRequest(
+      refillingQuantity = gasrequestModel.value?.etLastnameValue,
+      sellerId = navArguments?.getString("sellerId"))
+      )
+      )
+      progressLiveData.postValue(false)
+    }
+  }
+
+  fun bindCreateTotalResponse(response: CreateTotalResponse): Unit {
     val gasrequestModelValue = gasrequestModel.value ?:GasrequestModel()
     gasrequestModelValue.txt0000 = response.payload.toString()
     gasrequestModel.value = gasrequestModelValue

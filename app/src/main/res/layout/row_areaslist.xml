@@ -11,5 +11,5 @@
         android:paddingStart="@dimen/_18pxh"
         android:paddingTop="@dimen/_17pxv" android:singleLine="true"
         android:text="@{areaslistRowModel.txtLanguage}"
-        style="@style/txtSolidRoundedOutline" tools:text="@string/lbl_ikorodu2"/>
+        style="@style/txtSolidRoundedOutline" tools:text="@string/lbl_ikorodu"/>
 </layout>

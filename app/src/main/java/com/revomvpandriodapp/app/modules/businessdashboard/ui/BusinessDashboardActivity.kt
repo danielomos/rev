@@ -1,5 +1,8 @@
 package com.revomvpandriodapp.app.modules.businessdashboard.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.revomvpandriodapp.app.R
@@ -71,5 +74,11 @@ class BusinessDashboardActivity :
   companion object {
     const val TAG: String = "BUSINESS_DASHBOARD_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, BusinessDashboardActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }

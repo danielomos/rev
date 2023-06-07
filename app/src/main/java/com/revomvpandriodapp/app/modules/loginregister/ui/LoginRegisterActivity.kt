@@ -27,9 +27,6 @@ class LoginRegisterActivity :
       val destIntent = LoginActivity.getIntent(this, null)
       startActivity(destIntent)
     }
-    binding.imageArrowleft.setOnClickListener {
-      finish()
-    }
     binding.btnRegister.setOnClickListener {
       val destIntent = SignupAccountOptinActivity.getIntent(this, null)
       startActivity(destIntent)

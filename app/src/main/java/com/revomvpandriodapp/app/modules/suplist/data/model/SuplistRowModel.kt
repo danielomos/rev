@@ -18,11 +18,10 @@ data class SuplistRowModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtFrame247: String? = MyApp.getInstance().resources.getString(R.string.lbl_800)
+  var txtKg: String? = MyApp.getInstance().resources.getString(R.string.lbl_kg)
   ,
   /**
    * TODO Replace with dynamic value
    */
-  var txtKg: String? = MyApp.getInstance().resources.getString(R.string.lbl_kg)
-
+  var etFrame247Value: String? = null
 )
