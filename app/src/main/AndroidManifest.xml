@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.revomvpandriodapp.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.revomvpandriodapp.app.appcomponents.di.MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.householddashboardhomecontainer.ui.HouseholddashboardHomeContainerActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homeemailtoken.ui.HomeEmailtokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmansigncompleted.ui.GasManSignCompletedActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businessmobiletoken.ui.BusinessMobiletokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.dashboardblank.ui.DashboardBlankActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homesignupwithnumber.ui.HomeSignUpWithNumberActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmanmobiletoken.ui.GasManMobiletokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.cusorderslist.ui.CusorderslistActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.arealisting.ui.AreaListingActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.thankyou.ui.ThankYouActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businessemailtoken.ui.BusinessEmailtokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.locaton.ui.LocatonActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmanemailtoken.ui.GasManEmailtokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmansignupoption.ui.GasManSignupOptionActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businesssignupwitemail.ui.BusinessSignUpWitEmailActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homesuccess.ui.HomeSuccessActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homesignupoption.ui.HomeSignupOptionActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmansignupwithemail.ui.GasManSignUpWithEmailActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmanorderpage.ui.GasmanorderpageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmanorderslist.ui.GasmanorderslistActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.retailercoveragearea.ui.RetailercoverageareaActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.suplist.ui.SuplistActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.retailersetup.ui.RetailerSetupActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasrequest.ui.GasrequestActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businessdashboard.ui.BusinessDashboardActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homesignupwitemail.ui.HomeSignUpWitEmailActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businesssignupoption.ui.BusinessSignupOptionActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.login.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.cusorderpage.ui.CusorderpageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.homemobiletoken.ui.HomeMobiletokenActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.retailersetstock.ui.RetailersetstockActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businesssignupwithnumber.ui.BusinessSignUpWithNumberActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.signupaccountoptin.ui.SignupAccountOptinActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true"
+            android:name="com.revomvpandriodapp.app.modules.onboarding.ui.OnboardingActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.loginregister.ui.LoginRegisterActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.businesssignupcomplete.ui.BusinessSignupCompleteActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.revomvpandriodapp.app.modules.gasmansignupwithnumber.ui.GasManSignUpWithNumberActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>
