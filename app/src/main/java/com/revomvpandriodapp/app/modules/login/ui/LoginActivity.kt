@@ -35,11 +35,9 @@ import retrofit2.HttpException
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
   private val viewModel: LoginVM by viewModels<LoginVM>()
 
-  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 192
+  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 635
 
-
-  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 759
-
+  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 743
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -49,9 +47,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
   override fun setUpClicks(): Unit {
     binding.btnContinue.setOnClickListener {
       if(
-      viewModel.loginModel.value?.etEmailphoneValue.
+          viewModel.loginModel.value?.etEmailphoneValue.
       isValidEmail(true)
-      && viewModel.loginModel.value?.etPasswordValue.
+          && viewModel.loginModel.value?.etPasswordValue.
       isValidPassword(true)) {
         this@LoginActivity.hideKeyboard()
         viewModel.callCreateTokenApi()
@@ -63,14 +61,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     }
   }
 
-  override fun addObservers(): Unit {
+  override fun addObservers() {
     var progressDialog : AlertDialog? = null
     viewModel.progressLiveData.observe(this@LoginActivity) {
       if(it) {
         progressDialog?.dismiss()
         progressDialog = null
         progressDialog = this@LoginActivity.showProgressDialog()
-      } else {
+      } else  {
         progressDialog?.dismiss()
       }
     }
@@ -78,7 +76,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessCreateToken(it)
-      } else if(it is ErrorResponse) {
+      } else if(it is ErrorResponse)  {
         onErrorCreateToken(it.data ?:Exception())
       }
     }
@@ -86,19 +84,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessFetchType(it)
-      } else if(it is ErrorResponse) {
+      } else if(it is ErrorResponse)  {
         onErrorFetchType(it.data ?:Exception())
       }
     }
   }
 
-  private fun onSuccessCreateToken(response: SuccessResponse<CreateTokenResponse>): Unit {
+  private fun onSuccessCreateToken(response: SuccessResponse<CreateTokenResponse>) {
     viewModel.bindCreateTokenResponse(response.data)
     this@LoginActivity.hideKeyboard()
     viewModel.callFetchTypeApi()
   }
 
-  private fun onErrorCreateToken(exception: Exception): Unit {
+  private fun onErrorCreateToken(exception: Exception) {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -106,7 +104,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-        else JSONObject()
+            else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_wrong_login_details)
         this@LoginActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {
@@ -116,13 +114,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     }
   }
 
-  private fun onSuccessFetchType(response: SuccessResponse<FetchTypeResponse>): Unit {
+  private fun onSuccessFetchType(response: SuccessResponse<FetchTypeResponse>) {
     viewModel.bindFetchTypeResponse(response.data)
     val destIntent = DashboardBlankActivity.getIntent(this, null)
     startActivityForResult(destIntent, REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY)
   }
 
-  private fun onErrorFetchType(exception: Exception): Unit {
+  private fun onErrorFetchType(exception: Exception) {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -130,7 +128,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-        else JSONObject()
+            else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_wrong_login_detail)
         this@LoginActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {

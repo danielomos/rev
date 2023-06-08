@@ -17,7 +17,6 @@ import com.revomvpandriodapp.app.extensions.hideKeyboard
 import com.revomvpandriodapp.app.extensions.isJSONObject
 import com.revomvpandriodapp.app.extensions.neutralButton
 import com.revomvpandriodapp.app.extensions.showProgressDialog
-import com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity
 import com.revomvpandriodapp.app.modules.gasmanorderpage.`data`.model.ListordercodeRowModel
 import com.revomvpandriodapp.app.modules.gasmanorderpage.`data`.viewmodel.GasmanorderpageVM
 import com.revomvpandriodapp.app.network.models.fetchid.FetchIdResponse
@@ -59,8 +58,7 @@ class GasmanorderpageActivity :
       finish()
     }
     binding.btnBackToHomepageOne.setOnClickListener {
-      val destIntent = GasmandashboardHomeActivity.getIntent(this, null)
-      startActivity(destIntent)
+      // TODO please, add your navigation code here
       finish()
     }
   }
@@ -74,14 +72,14 @@ class GasmanorderpageActivity :
     }
   }
 
-  override fun addObservers(): Unit {
+  override fun addObservers() {
     var progressDialog : AlertDialog? = null
     viewModel.progressLiveData.observe(this@GasmanorderpageActivity) {
       if(it) {
         progressDialog?.dismiss()
         progressDialog = null
         progressDialog = this@GasmanorderpageActivity.showProgressDialog()
-      } else {
+      } else  {
         progressDialog?.dismiss()
       }
     }
@@ -89,17 +87,17 @@ class GasmanorderpageActivity :
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessFetchId(it)
-      } else if(it is ErrorResponse) {
+      } else if(it is ErrorResponse)  {
         onErrorFetchId(it.data ?:Exception())
       }
     }
   }
 
-  private fun onSuccessFetchId(response: SuccessResponse<FetchIdResponse>): Unit {
+  private fun onSuccessFetchId(response: SuccessResponse<FetchIdResponse>) {
     viewModel.bindFetchIdResponse(response.data)
   }
 
-  private fun onErrorFetchId(exception: Exception): Unit {
+  private fun onErrorFetchId(exception: Exception) {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -107,7 +105,7 @@ class GasmanorderpageActivity :
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-        else JSONObject()
+            else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_error_loading_order_de)
         this@GasmanorderpageActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {

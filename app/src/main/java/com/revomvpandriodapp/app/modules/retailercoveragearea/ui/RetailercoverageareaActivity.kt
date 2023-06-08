@@ -35,7 +35,7 @@ class RetailercoverageareaActivity :
     BaseActivity<ActivityRetailercoverageareaBinding>(R.layout.activity_retailercoveragearea) {
   private val viewModel: RetailercoverageareaVM by viewModels<RetailercoverageareaVM>()
 
-  private val REQUEST_CODE_RETAILER_SETUP_ACTIVITY: Int = 665
+  private val REQUEST_CODE_RETAILER_SETUP_ACTIVITY: Int = 522
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

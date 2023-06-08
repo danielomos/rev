@@ -12,10 +12,10 @@ import com.revomvpandriodapp.app.constants.userType
 import com.revomvpandriodapp.app.databinding.ActivityDashboardBlankBinding
 import com.revomvpandriodapp.app.extensions.alert
 import com.revomvpandriodapp.app.extensions.neutralButton
-import com.revomvpandriodapp.app.modules.businessdashboard.ui.BusinessDashboardActivity
+import com.revomvpandriodapp.app.modules.businessdashboardcontainer.ui.BusinessDashboardContainerActivity
 import com.revomvpandriodapp.app.modules.dashboardblank.`data`.viewmodel.DashboardBlankVM
-import com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity
-import com.revomvpandriodapp.app.modules.householddashboardhomecontainer.ui.HouseholddashboardHomeContainerActivity
+import com.revomvpandriodapp.app.modules.gasmandashb.ui.GasmandashbActivity
+import com.revomvpandriodapp.app.modules.homedashb.ui.HomedashbActivity
 import kotlin.String
 import kotlin.Unit
 import org.koin.android.ext.android.inject
@@ -30,17 +30,17 @@ class DashboardBlankActivity :
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.dashboardBlankVM = viewModel
     if(
-    userType.HOUSEHOLD == prefs.getUserType()
+    prefs.getUserType() == userType.HOUSEHOLD
     ) {
       onCreateCondition()
     }
     else if(
-    userType.RETAILER == prefs.getUserType()
+    prefs.getUserType() == userType.RETAILER
     ) {
       onCreateCondition1()
     }
     else if(
-    userType.BUSINESS == prefs.getUserType()
+    prefs.getUserType() == userType.BUSINESS
     ) {
       onCreateCondition2()
     }
@@ -53,21 +53,21 @@ class DashboardBlankActivity :
   }
 
   private fun onCreateCondition(): Unit {
-    val destIntent = HouseholddashboardHomeContainerActivity.getIntent(this, null)
-    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+    val destIntent = HomedashbActivity.getIntent(this, null)
     startActivity(destIntent)
+    finish()
   }
 
   private fun onCreateCondition1(): Unit {
-    val destIntent = GasmandashboardHomeActivity.getIntent(this, null)
-    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+    val destIntent = GasmandashbActivity.getIntent(this, null)
     startActivity(destIntent)
+    finish()
   }
 
   private fun onCreateCondition2(): Unit {
-    val destIntent = BusinessDashboardActivity.getIntent(this, null)
-    destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+    val destIntent = BusinessDashboardContainerActivity.getIntent(this, null)
     startActivity(destIntent)
+    finish()
   }
 
   private fun onCreateCondition3(): Unit {

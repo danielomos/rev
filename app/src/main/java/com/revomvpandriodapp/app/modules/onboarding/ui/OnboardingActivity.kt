@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import com.revomvpandriodapp.app.R
 import com.revomvpandriodapp.app.appcomponents.base.BaseActivity
 import com.revomvpandriodapp.app.databinding.ActivityOnboardingBinding
-import com.revomvpandriodapp.app.modules.loginregister.ui.LoginRegisterActivity
+import com.revomvpandriodapp.app.modules.loginregister.ui.LoginregisterActivity
 import com.revomvpandriodapp.app.modules.onboarding.`data`.viewmodel.OnboardingVM
 import kotlin.String
 import kotlin.Unit
@@ -18,7 +18,7 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>(R.layout.acti
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.onboardingVM = viewModel
     Handler(Looper.getMainLooper()).postDelayed( {
-      val destIntent = LoginRegisterActivity.getIntent(this, null)
+      val destIntent = LoginregisterActivity.getIntent(this, null)
       startActivity(destIntent)
       finish()
       }, 3000)

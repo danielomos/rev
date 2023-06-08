@@ -43,7 +43,7 @@ class CusorderpageVM : ViewModel(), KoinComponent {
       networkRepository.fetchId1(
       contentType = """application/json""",
           authorization = prefs.getAccessToken(),
-          id = navArguments?.getString("cusOrderId")
+          id = navArguments?.getString("orderId")
       )
       )
       progressLiveData.postValue(false)

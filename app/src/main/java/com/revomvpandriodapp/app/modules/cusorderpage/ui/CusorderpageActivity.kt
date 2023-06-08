@@ -19,7 +19,6 @@ import com.revomvpandriodapp.app.extensions.neutralButton
 import com.revomvpandriodapp.app.extensions.showProgressDialog
 import com.revomvpandriodapp.app.modules.cusorderpage.`data`.model.CusorderpageRowModel
 import com.revomvpandriodapp.app.modules.cusorderpage.`data`.viewmodel.CusorderpageVM
-import com.revomvpandriodapp.app.modules.householddashboardhomecontainer.ui.HouseholddashboardHomeContainerActivity
 import com.revomvpandriodapp.app.network.models.fetchid1.FetchId1Response
 import com.revomvpandriodapp.app.network.resources.ErrorResponse
 import com.revomvpandriodapp.app.network.resources.SuccessResponse
@@ -56,8 +55,7 @@ class CusorderpageActivity :
 
   override fun setUpClicks(): Unit {
     binding.btnBackToHomepageOne.setOnClickListener {
-      val destIntent = HouseholddashboardHomeContainerActivity.getIntent(this, null)
-      startActivity(destIntent)
+      // TODO please, add your navigation code here
       finish()
     }
     binding.imageArrowleft.setOnClickListener {

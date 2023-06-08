@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="drawerItemFrame51102Model" type="com.revomvpandriodapp.app.modules.itemframe51102.data.model.DrawerItemFrame51102Model"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumnrectangle"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <ScrollView android:clipToPadding="false"
+            android:fillViewport="true" android:gravity="start"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp" android:layout_weight="1" android:layout_width="match_parent">
+            <View android:id="@+id/viewRectangle"
+                android:layout_height="878dp" android:layout_width="@dimen/_213pxh"/>
+        </ScrollView>
+    </LinearLayout>
+</layout>

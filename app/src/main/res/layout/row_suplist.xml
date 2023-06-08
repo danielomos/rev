@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{suplistRowModel.txtRevoGas}"
-                    style="@style/txtRobotoromanregular15_2" tools:text="@string/lbl_revo_gas"/>
+                    style="@style/txtRobotoromanregular15" tools:text="@string/lbl_revo_gas"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txt10YabaRoad"
                     android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:singleLine="true"
                     android:text="@{suplistRowModel.txt10YabaRoad}"
-                    style="@style/txtRobotoromanregular10_2" tools:text="@string/msg_10_yaba_road"/>
+                    style="@style/txtRobotoromanregular10_1" tools:text="@string/msg_10_yaba_road"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout android:gravity="start"

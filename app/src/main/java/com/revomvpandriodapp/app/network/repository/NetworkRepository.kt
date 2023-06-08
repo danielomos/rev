@@ -25,8 +25,6 @@ import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalRequest
 import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalResponse
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateRequest
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
-import com.revomvpandriodapp.app.network.models.fetchall.FetchAllResponse
-import com.revomvpandriodapp.app.network.models.fetchall1.FetchAll1Response
 import com.revomvpandriodapp.app.network.models.fetchareas.FetchAreasResponse
 import com.revomvpandriodapp.app.network.models.fetchdetail.FetchDetailResponse
 import com.revomvpandriodapp.app.network.models.fetchdetails.FetchDetailsResponse
@@ -66,21 +64,6 @@ class NetworkRepository : KoinComponent {
     ErrorResponse(e.message ?:errorMessage, e)
   }
 
-  suspend fun fetchAll(contentType: String?, authorization: String?): Response<FetchAllResponse> =
-      try {
-    val isOnline = MyApp.getInstance().isOnline()
-    if(isOnline) {
-      SuccessResponse(retrofitServices.fetchAll(contentType, authorization))
-    } else {
-      val internetException =
-          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
-      ErrorResponse(internetException.message ?:errorMessage, internetException)
-    }
-  } catch(e:Exception) {
-    e.printStackTrace()
-    ErrorResponse(e.message ?:errorMessage, e)
-  }
-
   suspend fun fetchId1(
     contentType: String?,
     authorization: String?,
@@ -89,21 +72,6 @@ class NetworkRepository : KoinComponent {
     val isOnline = MyApp.getInstance().isOnline()
     if(isOnline) {
       SuccessResponse(retrofitServices.fetchId1(contentType, authorization, id))
-    } else {
-      val internetException =
-          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
-      ErrorResponse(internetException.message ?:errorMessage, internetException)
-    }
-  } catch(e:Exception) {
-    e.printStackTrace()
-    ErrorResponse(e.message ?:errorMessage, e)
-  }
-
-  suspend fun fetchAll1(contentType: String?, authorization: String?): Response<FetchAll1Response> =
-      try {
-    val isOnline = MyApp.getInstance().isOnline()
-    if(isOnline) {
-      SuccessResponse(retrofitServices.fetchAll1(contentType, authorization))
     } else {
       val internetException =
           NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))

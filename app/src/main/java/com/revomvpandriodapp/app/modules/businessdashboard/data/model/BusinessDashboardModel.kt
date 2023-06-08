@@ -33,7 +33,7 @@ data class BusinessDashboardModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txt0TextFormField: String? = MyApp.getInstance().resources.getString(R.string.lbl_02)
+  var txt0TextFormField: String? = MyApp.getInstance().resources.getString(R.string.lbl_0)
   ,
   /**
    * TODO Replace with dynamic value
@@ -92,7 +92,7 @@ data class BusinessDashboardModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txt0TextFormFieldOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_02)
+  var txt0TextFormFieldOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_0)
   ,
   /**
    * TODO Replace with dynamic value
@@ -124,25 +124,5 @@ data class BusinessDashboardModel(
    * TODO Replace with dynamic value
    */
   var txtShowallOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_show_all)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
-  var txtHomeOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_home)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
-  var txtExpenses: String? = MyApp.getInstance().resources.getString(R.string.lbl_supplier)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
-  var txtWallet: String? = MyApp.getInstance().resources.getString(R.string.lbl_support)
-  ,
-  /**
-   * TODO Replace with dynamic value
-   */
-  var txtProfile: String? = MyApp.getInstance().resources.getString(R.string.lbl_menu)
 
 )

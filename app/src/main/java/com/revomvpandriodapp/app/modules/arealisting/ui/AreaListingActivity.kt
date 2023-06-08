@@ -35,8 +35,7 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
     {
   private val viewModel: AreaListingVM by viewModels<AreaListingVM>()
 
-  private val REQUEST_CODE_SUPLIST_ACTIVITY: Int = 506
-
+  private val REQUEST_CODE_SUPLIST_ACTIVITY: Int = 143
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -70,7 +69,7 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
     item: ListlanguageRowModel
   ): Unit {
     when(view.id) {
-      R.id.txtLanguage -> {
+      R.id.txtLanguage ->  {
         val destBundle = Bundle()
         destBundle.putString("areaName",Gson().toJson(viewModel.fetchAreasLiveData.value?.getSuccessResponse()?.payload?.get(position)?.areaName))
         val destIntent = SuplistActivity.getIntent(this, destBundle)
@@ -79,14 +78,14 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
     }
   }
 
-  override fun addObservers(): Unit {
+  override fun addObservers() {
     var progressDialog : AlertDialog? = null
     viewModel.progressLiveData.observe(this@AreaListingActivity) {
       if(it) {
         progressDialog?.dismiss()
         progressDialog = null
         progressDialog = this@AreaListingActivity.showProgressDialog()
-      } else {
+      } else  {
         progressDialog?.dismiss()
       }
     }
@@ -94,17 +93,17 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessFetchAreas(it)
-      } else if(it is ErrorResponse) {
+      } else if(it is ErrorResponse)  {
         onErrorFetchAreas(it.data ?:Exception())
       }
     }
   }
 
-  private fun onSuccessFetchAreas(response: SuccessResponse<FetchAreasResponse>): Unit {
+  private fun onSuccessFetchAreas(response: SuccessResponse<FetchAreasResponse>) {
     viewModel.bindFetchAreasResponse(response.data)
   }
 
-  private fun onErrorFetchAreas(exception: Exception): Unit {
+  private fun onErrorFetchAreas(exception: Exception) {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -112,7 +111,7 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-        else JSONObject()
+            else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_error_loading_available_area)
         this@AreaListingActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {

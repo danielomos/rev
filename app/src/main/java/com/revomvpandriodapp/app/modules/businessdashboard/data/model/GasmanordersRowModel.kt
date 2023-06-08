@@ -23,6 +23,6 @@ data class GasmanordersRowModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtWeightOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_12kg2)
+  var txtWeightOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_12kg)
 
 )

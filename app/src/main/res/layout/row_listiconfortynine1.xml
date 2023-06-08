@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="listiconfortynine1RowModel" type="com.revomvpandriodapp.app.modules.cusorderslist.data.model.Listiconfortynine1RowModel"/>
+        <variable name="listiconfortynine1RowModel" type="com.revomvpandriodapp.app.modules.orderlist4household.data.model.Listiconfortynine1RowModel"/>
     </data>
     <LinearLayout android:gravity="start"
         android:id="@+id/linearColumniconfortynine"
@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{listiconfortynine1RowModel.txtWeight}"
-                    style="@style/txtRobotoromanregular15_2" tools:text="@string/lbl_12kg"/>
+                    style="@style/txtRobotoromanregular15" tools:text="@string/lbl_12kg2"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtPendingTextFor"
                     android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{listiconfortynine1RowModel.txtPendingTextFor}"
-                    style="@style/txtRobotoromanregular10_2" tools:text="@string/lbl_pending"/>
+                    style="@style/txtRobotoromanregular10_1" tools:text="@string/lbl_pending"/>
             </LinearLayout>
             <LinearLayout android:id="@+id/linearRowcalendar"
                 android:layout_height="wrap_content"

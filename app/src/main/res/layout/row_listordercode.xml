@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtOrderCode}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_order_code"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_order_code"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtOrderAmount"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtOrderAmount}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_order_amount"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_order_amount"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtRefillQuantity"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtRefillQuantity}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_refill_quantity"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_refill_quantity"/>
         <TextView android:ellipsize="end" android:id="@+id/txtPickUpKg"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10pxh"
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtPickUpKg}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_pickup_kg"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_pickup_kg"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtDeliveryKg"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtDeliveryKg}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_delivery_kg"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_delivery_kg"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtOrderStatus"
             android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtOrderStatus}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_order_status"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_order_status"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtCustomerAddres"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtCustomerAddres}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/msg_customer_addres"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/msg_customer_addres"/>
         <TextView android:ellipsize="end" android:id="@+id/txtOrderDate"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10pxh"
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtOrderDate}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_order_date"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_order_date"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtCustomerName"
             android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtCustomerName}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_customer_name"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/lbl_customer_name"/>
         <TextView android:ellipsize="end"
             android:id="@+id/txtCustomerPhone"
             android:layout_height="wrap_content"
@@ -91,6 +91,6 @@
             android:layout_width="match_parent"
             android:singleLine="true"
             android:text="@{listordercodeRowModel.txtCustomerPhone}"
-            style="@style/txtRobotoromanregular13_1" tools:text="@string/msg_customer_phone"/>
+            style="@style/txtRobotoromanregular13" tools:text="@string/msg_customer_phone"/>
     </LinearLayout>
 </layout>

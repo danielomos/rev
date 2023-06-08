@@ -20,8 +20,6 @@ import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalRequest
 import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalResponse
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateRequest
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
-import com.revomvpandriodapp.app.network.models.fetchall.FetchAllResponse
-import com.revomvpandriodapp.app.network.models.fetchall1.FetchAll1Response
 import com.revomvpandriodapp.app.network.models.fetchareas.FetchAreasResponse
 import com.revomvpandriodapp.app.network.models.fetchdetail.FetchDetailResponse
 import com.revomvpandriodapp.app.network.models.fetchdetails.FetchDetailsResponse
@@ -45,20 +43,12 @@ interface RetrofitServices {
     @Query("id") id: String?
   ): FetchIdResponse
 
-  @GET("/api/distributor/retailer/order/all")
-  suspend fun fetchAll(@Header("Content-type") contentType: String?, @Header("Authorization")
-      authorization: String?): FetchAllResponse
-
   @GET("/api/customer/individual/order/{id}/")
   suspend fun fetchId1(
     @Header("Content-type") contentType: String?,
     @Header("Authorization") authorization: String?,
     @Query("id") id: String?
   ): FetchId1Response
-
-  @GET("/api/customer/individual/order/all")
-  suspend fun fetchAll1(@Header("content-Type") contentType: String?, @Header("Authorization")
-      authorization: String?): FetchAll1Response
 
   @GET("/api/distributor/retailer/profile/details")
   suspend fun fetchDetails(@Header("Content-type") contentType: String?, @Header("Authorization")

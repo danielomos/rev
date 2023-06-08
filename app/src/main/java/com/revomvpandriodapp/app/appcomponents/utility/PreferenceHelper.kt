@@ -59,15 +59,6 @@ class PreferenceHelper {
 
   fun getOnBoarded(): Int? = sharedPreference.getInt("onBoarded", 0)
 
-  fun setUserType(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("userType", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getUserType(): String? = sharedPreference.getString("userType", null)
-
   fun setSellerAddress(paramValue: String?): Unit {
     with(sharedPreference.edit()) {
       this.putString("sellerAddress", paramValue!!)
@@ -112,6 +103,15 @@ class PreferenceHelper {
   }
 
   fun getRefExpiredAt(): Long? = sharedPreference.getLong("refExpiredAt", 0L)
+
+  fun setUserType(paramValue: String?): Unit {
+    with(sharedPreference.edit()) {
+      this.putString("userType", paramValue!!)
+      apply()
+    }
+  }
+
+  fun getUserType(): String? = sharedPreference.getString("userType", null)
 
   fun setPayload(paramValue: String?): Unit {
     with(sharedPreference.edit()) {

@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{listiconfortynineRowModel.txtRevoGasTextFo}"
-                style="@style/txtRobotoromanregular15_2" tools:text="@string/lbl_revo_gas"/>
+                style="@style/txtRobotoromanregular15" tools:text="@string/lbl_revo_gas"/>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtPendingTextFor"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{listiconfortynineRowModel.txtPendingTextFor}"
-                style="@style/txtRobotoromanregular10_2" tools:text="@string/lbl_pending"/>
+                style="@style/txtRobotoromanregular10_1" tools:text="@string/lbl_pending"/>
         </LinearLayout>
         <ImageView android:id="@+id/imageMorevertical"
             android:layout_height="@dimen/_10pxh"

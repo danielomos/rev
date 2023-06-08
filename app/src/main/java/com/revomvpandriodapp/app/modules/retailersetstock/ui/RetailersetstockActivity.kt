@@ -1,8 +1,5 @@
 package com.revomvpandriodapp.app.modules.retailersetstock.ui
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
@@ -16,7 +13,6 @@ import com.revomvpandriodapp.app.extensions.hideKeyboard
 import com.revomvpandriodapp.app.extensions.isJSONObject
 import com.revomvpandriodapp.app.extensions.neutralButton
 import com.revomvpandriodapp.app.extensions.showProgressDialog
-import com.revomvpandriodapp.app.modules.gasmandashboardhome.ui.GasmandashboardHomeActivity
 import com.revomvpandriodapp.app.modules.retailersetstock.`data`.viewmodel.RetailersetstockVM
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
 import com.revomvpandriodapp.app.network.resources.ErrorResponse
@@ -42,8 +38,7 @@ class RetailersetstockActivity :
       viewModel.callCreateUpdateApi()
     }
     binding.btnBackToHomepageOne.setOnClickListener {
-      val destIntent = GasmandashboardHomeActivity.getIntent(this, null)
-      startActivity(destIntent)
+      // TODO please, add your navigation code here
       finish()
     }
   }
@@ -99,11 +94,5 @@ class RetailersetstockActivity :
   companion object {
     const val TAG: String = "RETAILERSETSTOCK_ACTIVITY"
 
-
-    fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, RetailersetstockActivity::class.java)
-      destIntent.putExtra("bundle", bundle)
-      return destIntent
-    }
   }
 }

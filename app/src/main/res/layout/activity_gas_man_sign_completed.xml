@@ -28,7 +28,7 @@
                         android:layout_marginEnd="@dimen/_17pxh"
                         android:layout_marginStart="@dimen/_17pxh"
                         android:layout_marginTop="@dimen/_127pxv"
-                        android:layout_width="@dimen/_100pxh" style="@style/groupStyleblue_A400cornerRadius">
+                        android:layout_width="@dimen/_100pxh" style="@style/groupStyleblue_2">
                         <ImageView android:id="@+id/imageVector"
                             android:layout_gravity="center"
                             android:layout_height="@dimen/_22pxh"

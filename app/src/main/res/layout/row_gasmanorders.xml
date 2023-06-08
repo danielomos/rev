@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{gasmanordersRowModel.txtRevoGasTextFoOne}"
-                    style="@style/txtRobotoromanregular15_2" tools:text="@string/lbl_revo_gas"/>
+                    style="@style/txtRobotoromanregular15" tools:text="@string/lbl_revo_gas"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtPendingTextForOne"
                     android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{gasmanordersRowModel.txtPendingTextForOne}"
-                    style="@style/txtRobotoromanregular10_2" tools:text="@string/lbl_pending"/>
+                    style="@style/txtRobotoromanregular10_1" tools:text="@string/lbl_pending"/>
             </LinearLayout>
             <ImageView android:id="@+id/imageMoreverticalOne"
                 android:layout_height="@dimen/_10pxh"
@@ -107,7 +107,7 @@
                 android:layout_weight="0.27" android:layout_width="0dp"
                 android:singleLine="true"
                 android:text="@{gasmanordersRowModel.txtWeightOne}"
-                style="@style/txtRobotoromanregular17" tools:text="@string/lbl_12kg2"/>
+                style="@style/txtRobotoromanregular17" tools:text="@string/lbl_12kg"/>
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"

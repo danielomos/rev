@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{retailersetstockVM.retailersetstockModel.txtAddStockQuant}"
-                style="@style/txtRobotoromanmedium15_1" tools:text="@string/msg_add_stock_quant"/>
+                style="@style/txtRobotoromanmedium15_2" tools:text="@string/msg_add_stock_quant"/>
             <EditText
                 android:background="@drawable/rectangle_border_black_900_26_radius_10"
                 android:ellipsize="end"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:singleLine="true"
             android:text="@{retailersetstockVM.retailersetstockModel.txtSellingPriceK}"
-            style="@style/txtRobotoromanmedium15_1" tools:text="@string/msg_selling_price_k"/>
+            style="@style/txtRobotoromanmedium15_2" tools:text="@string/msg_selling_price_k"/>
         <EditText
             android:background="@drawable/rectangle_border_black_900_26_radius_10"
             android:ellipsize="end"
