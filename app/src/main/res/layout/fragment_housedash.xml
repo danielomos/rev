@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="housedashVM" type="com.revomvpandriodapp.app.modules.housedash.data.viewmodel.HousedashVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumnTwo"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumncalculator"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearColumnOne"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius_5">
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearColumn"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStylecornerRadius_5">
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearColumnhouseholdtextf"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical" style="@style/groupStyleblue_3">
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbarToolbar"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_15pxh"
+                            android:layout_marginStart="@dimen/_15pxh"
+                            android:layout_marginTop="@dimen/_5pxv"
+                            android:layout_width="match_parent" app:contentInsetStart="0dp">
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearRowhouseholdtextf"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent" android:orientation="horizontal">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtHouseHoldTextF"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_1pxv"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:layout_weight="0.43"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txtHouseHoldTextF}"
+                                    style="@style/txtRobotoromanmedium20" tools:text="@string/lbl_hello2"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtHouseHoldTextFOne"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_2pxv"
+                                    android:layout_marginStart="@dimen/_10pxh"
+                                    android:layout_weight="0.38"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txtHouseHoldTextFOne}"
+                                    style="@style/txtRobotoromanmedium20" tools:text="@string/lbl_seun"/>
+                                <ImageView
+                                    android:id="@+id/imageNotowavinghan"
+                                    android:layout_height="@dimen/_22pxh"
+                                    android:layout_marginBottom="@dimen/_1pxv"
+                                    android:layout_marginEnd="@dimen/_1pxh"
+                                    android:layout_marginStart="@dimen/_33pxh"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:layout_width="@dimen/_22pxh"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_notowavinghan"
+                                    tools:ignore="ContentDescription" tools:src="@drawable/img_notowavinghan"/>
+                            </LinearLayout>
+                        </androidx.appcompat.widget.Toolbar>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtLanguage"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_15pxh"
+                            android:layout_marginStart="@dimen/_15pxh"
+                            android:layout_marginTop="@dimen/_3pxv"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{housedashVM.housedashModel.txtLanguage}"
+                            style="@style/txtRobotoromanregular17_1" tools:text="@string/msg_enjoy_seamless"/>
+                        <View
+                            android:background="@drawable/rectangle_bg_white_a700"
+                            android:id="@+id/viewRectangleSeven"
+                            android:layout_height="@dimen/_1pxh"
+                            android:layout_marginEnd="@dimen/_15pxh"
+                            android:layout_marginStart="@dimen/_15pxh"
+                            android:layout_marginTop="@dimen/_16pxv" android:layout_width="@dimen/_1pxh"/>
+                        <ProgressBar android:gravity="center_horizontal"
+                            android:id="@+id/progressBarGaslevel"
+                            android:indeterminate="false"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_15pxh"
+                            android:layout_marginStart="@dimen/_15pxh"
+                            android:layout_width="match_parent"
+                            android:max="100"
+                            android:minHeight="@dimen/_39pxv"
+                            android:progressDrawable="@drawable/layer_list_bg_gray_300_radius_19_68" style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+                        <LinearLayout android:gravity="start"
+                            android:id="@+id/linearRowstocklevel"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_26pxh"
+                            android:layout_marginStart="@dimen/_26pxh"
+                            android:layout_marginTop="@dimen/_3pxv"
+                            android:layout_width="match_parent" android:orientation="horizontal">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtStockLevel"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_1pxv"
+                                android:layout_weight="0.76"
+                                android:layout_width="0dp"
+                                android:singleLine="true"
+                                android:text="@{housedashVM.housedashModel.txtStockLevel}"
+                                style="@style/txtRobotoromanmedium12" tools:text="@string/lbl_gas_level"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtZero"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_1pxv"
+                                android:layout_marginStart="@dimen/_236pxh"
+                                android:layout_weight="0.24"
+                                android:layout_width="0dp"
+                                android:singleLine="true"
+                                android:text="@{housedashVM.housedashModel.txtZero}"
+                                style="@style/txtRobotoromanmedium12" tools:text="@string/lbl_02"/>
+                        </LinearLayout>
+                        <LinearLayout android:gravity="start"
+                            android:id="@+id/linearRowgroup237"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_45pxv"
+                            android:layout_marginEnd="@dimen/_1pxh"
+                            android:layout_marginStart="@dimen/_15pxh"
+                            android:layout_marginTop="@dimen/_14pxv"
+                            android:layout_width="match_parent" android:orientation="horizontal">
+                            <ImageButton
+                                android:background="@drawable/rectangle_bg_white_a700_radius_19"
+                                android:id="@+id/btnGroup237"
+                                android:layout_height="@dimen/_38pxh"
+                                android:layout_marginBottom="@dimen/_1pxv"
+                                android:layout_marginTop="@dimen/_1pxv"
+                                android:layout_width="@dimen/_38pxh"
+                                android:paddingHorizontal="@dimen/_6pxh"
+                                android:paddingVertical="@dimen/_6pxv"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/img_youngwomansit" tools:ignore="ContentDescription"/>
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearColumnselfmanageser"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_6pxv"
+                                android:layout_marginStart="@dimen/_9pxh"
+                                android:layout_marginTop="@dimen/_6pxv"
+                                android:layout_weight="0.57"
+                                android:layout_width="0dp" android:orientation="vertical">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtSelfManageSer"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10pxh"
+                                    android:layout_width="match_parent"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txtSelfManageSer}"
+                                    style="@style/txtRobotoromanregular10" tools:text="@string/msg_self_manage_ser"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtRV100001"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10pxh"
+                                    android:layout_marginTop="@dimen/_3pxv"
+                                    android:layout_width="wrap_content"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txtRV100001}"
+                                    style="@style/txtRobotoromanregular10" tools:text="@string/lbl_rv100001"/>
+                            </LinearLayout>
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearColumnsellingprice"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_76pxh"
+                                android:layout_marginStart="@dimen/_9pxh"
+                                android:layout_marginTop="@dimen/_1pxv"
+                                android:layout_weight="0.3"
+                                android:layout_width="0dp" android:orientation="vertical">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtSellingPrice"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txtSellingPrice}"
+                                    style="@style/txtRobotoromanmedium15_1" tools:text="@string/lbl_selling_price"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txt1200Kg"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10pxh"
+                                    android:layout_marginTop="@dimen/_3pxv"
+                                    android:layout_width="match_parent"
+                                    android:singleLine="true"
+                                    android:text="@{housedashVM.housedashModel.txt1200Kg}"
+                                    style="@style/txtRobotoromanregular10" tools:text="@string/lbl_1200_kg"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearRowcalculator"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_marginStart="@dimen/_7pxh"
+                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearPaybill"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylecornerRadius_3">
+                    <ImageView android:id="@+id/imageCalculator"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="@dimen/_27pxh"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_40pxv"
+                        android:layout_width="@dimen/_25pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_camera"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_camera"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtFundWallet"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_5pxv"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{housedashVM.housedashModel.txtFundWallet}"
+                        style="@style/txtManropebold20" tools:text="@string/lbl_fund_wallet"/>
+                    <TextView android:gravity="center_horizontal"
+                        android:id="@+id/txtTransferFundT"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_37pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_5pxv"
+                        android:layout_width="match_parent"
+                        android:text="@{housedashVM.housedashModel.txtTransferFundT}"
+                        style="@style/txtManroperegular16" tools:text="@string/msg_transfer_fund_t"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearBuyairtime"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylecornerRadius_4">
+                    <ImageView android:id="@+id/imageMobile"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="@dimen/_33pxh"
+                        android:layout_marginEnd="@dimen/_17pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_26pxv"
+                        android:layout_width="@dimen/_18pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_mobile"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_mobile"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtGasRefill"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_17pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{housedashVM.housedashModel.txtGasRefill}"
+                        style="@style/txtManropebold20_1" tools:text="@string/lbl_gas_refill"/>
+                    <TextView android:gravity="center_horizontal"
+                        android:id="@+id/txtTopuporRefil"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_31pxv"
+                        android:layout_marginEnd="@dimen/_17pxh"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_12pxv"
+                        android:layout_width="match_parent"
+                        android:text="@{housedashVM.housedashModel.txtTopuporRefil}"
+                        style="@style/txtManroperegular16_1" tools:text="@string/msg_top_up_or_refil"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameStacklanguageOne"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_17pxh"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_7pxv"
+            android:layout_width="@dimen/_295pxh" style="@style/groupStylewhite_A700">
+            <HorizontalScrollView android:fillViewport="true"
+                android:id="@+id/horizontalScrollHorizontalscrollcreatefromfra"
+                android:layout_gravity="start"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_1pxv"
+                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_width="match_parent" android:scrollbars="none">
+                <FrameLayout android:id="@+id/frameStackcreatefromfra"
+                    android:layout_height="@dimen/_19pxv" android:layout_width="@dimen/_295pxh">
+                    <View android:background="@color/white_A700"
+                        android:id="@+id/viewCreatefromfra"
+                        android:layout_gravity="end"
+                        android:layout_height="@dimen/_19pxv" android:layout_width="@dimen/_376pxh"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtShowall"
+                        android:layout_gravity="bottom|end"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{housedashVM.housedashModel.txtShowall}"
+                        style="@style/txtRobotoromanregular13_1" tools:text="@string/lbl_show_all"/>
+                </FrameLayout>
+            </HorizontalScrollView>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtLanguageOne"
+                android:layout_gravity="start"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{housedashVM.housedashModel.txtLanguageOne}"
+                style="@style/txtRobotoromanmedium17_1" tools:text="@string/lbl_recent_orders"/>
+        </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center_horizontal"
+            android:id="@+id/recyclerGasmanorder"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginStart="@dimen/_17pxh"
+            android:layout_marginTop="@dimen/_3pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="2" tools:listitem="@layout/row_gasmanorder2"/>
+    </LinearLayout>
+</layout>

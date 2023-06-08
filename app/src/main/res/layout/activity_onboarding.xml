@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="onboardingVM" type="com.revomvpandriodapp.app.modules.onboarding.data.viewmodel.OnboardingVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStackskip"
+        android:layout_height="match_parent" android:layout_width="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:backgroundTint="@color/white_A700"
+            android:id="@+id/floatingBtnFloatingactionbutton"
+            android:layout_gravity="bottom|end"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_35pxh"
+            android:layout_marginStart="@dimen/_35pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="wrap_content"
+            app:fabCustomSize="@dimen/_62pxh"
+            app:srcCompat="@drawable/img_arrowright" app:tint="@color/bluegray_900"/>
+        <LinearLayout android:id="@+id/linearOnboarding"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylegray_900">
+            <TextView android:ellipsize="end" android:id="@+id/txtSkip"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16pxh"
+                android:layout_marginStart="@dimen/_16pxh"
+                android:layout_marginTop="@dimen/_102pxv"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{onboardingVM.onboardingModel.txtSkip}"
+                style="@style/txtRobotoMonorobotomonoregular15" tools:text="@string/lbl_skip"/>
+            <ImageView android:id="@+id/imageBannerFortyOne"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_250pxh"
+                android:layout_marginEnd="@dimen/_42pxh"
+                android:layout_marginStart="@dimen/_42pxh"
+                android:layout_marginTop="@dimen/_142pxv"
+                android:layout_width="@dimen/_284pxh"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_banner41}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_banner41"/>
+            <TextView android:gravity="center_horizontal"
+                android:id="@+id/txtFindGasSuppli"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_170pxv"
+                android:layout_marginEnd="@dimen/_16pxh"
+                android:layout_marginStart="@dimen/_16pxh"
+                android:layout_marginTop="@dimen/_28pxv"
+                android:layout_width="match_parent"
+                android:text="@{onboardingVM.onboardingModel.txtFindGasSuppli}"
+                style="@style/txtRobotoromanmedium24_1" tools:text="@string/msg_find_gas_suppli"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

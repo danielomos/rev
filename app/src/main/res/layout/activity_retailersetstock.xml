@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="retailersetstockVM" type="com.revomvpandriodapp.app.modules.retailersetstock.data.viewmodel.RetailersetstockVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnhowcanwehelp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <TextView android:gravity="center_horizontal"
+            android:id="@+id/txtHowcanwehelp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_13pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_103pxv"
+            android:layout_width="match_parent"
+            android:text="@{retailersetstockVM.retailersetstockModel.txtHowcanwehelp}"
+            style="@style/txtRobotoromanmedium24" tools:text="@string/msg_set_your_stock"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnaddstockquant"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylecornerRadius_1">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtAddStockQuant"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_1pxh"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{retailersetstockVM.retailersetstockModel.txtAddStockQuant}"
+                style="@style/txtRobotoromanmedium15_2" tools:text="@string/msg_add_stock_quant"/>
+            <EditText
+                android:background="@drawable/rectangle_border_black_900_26_radius_10"
+                android:ellipsize="end"
+                android:hint="@string/lbl_enter_quantity"
+                android:id="@+id/etFirstname" android:inputType="text"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9pxv"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_13pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_20pxh"
+                android:paddingTop="@dimen/_18pxv"
+                android:singleLine="true"
+                android:text="@={retailersetstockVM.retailersetstockModel.etFirstnameValue}"
+                android:textColorHint="@color/gray_400"
+                style="@style/etRoundedOutline" tools:ignore="Autofill"/>
+        </LinearLayout>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtSellingPriceK"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_28pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{retailersetstockVM.retailersetstockModel.txtSellingPriceK}"
+            style="@style/txtRobotoromanmedium15_2" tools:text="@string/msg_selling_price_k"/>
+        <EditText
+            android:background="@drawable/rectangle_border_black_900_26_radius_10"
+            android:ellipsize="end"
+            android:hint="@string/msg_enter_selling_p"
+            android:id="@+id/etLastname" android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_3pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_13pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_20pxh"
+            android:paddingTop="@dimen/_18pxv" android:singleLine="true"
+            android:text="@={retailersetstockVM.retailersetstockModel.etLastnameValue}"
+            android:textColorHint="@color/gray_400"
+            style="@style/etRoundedOutline" tools:ignore="Autofill"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnSetStock"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_43pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_17pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_17pxv" android:singleLine="true"
+            android:text="@string/lbl_set_stock"
+            android:textAllCaps="false"
+            style="@style/btnSolidRoundedOutline" tools:text="@string/lbl_set_stock"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnBackToHomepageOne"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_13pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_196pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_15pxv" android:singleLine="true"
+            android:text="@string/msg_back_to_homepag"
+            android:textAllCaps="false"
+            style="@style/btnSolidRoundedOutline" tools:text="@string/msg_back_to_homepag"/>
+    </LinearLayout>
+</layout>
