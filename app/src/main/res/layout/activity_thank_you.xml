@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="thankYouVM" type="com.revomvpandriodapp.app.modules.thankyou.data.viewmodel.ThankYouVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearThankYou"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <TextView android:ellipsize="end" android:id="@+id/txtTitle"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_164pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{thankYouVM.thankYouModel.txtTitle}"
+            style="@style/txtRobotoromanmedium34_1" tools:text="@string/lbl_thank_you"/>
+        <TextView android:id="@+id/txtThepagearelo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_11pxv"
+            android:layout_width="wrap_content"
+            android:text="@{thankYouVM.thankYouModel.txtThepagearelo}"
+            style="@style/txtRobotoromanregular17" tools:text="@string/msg_your_order_with"/>
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumnbackToHomepageOne"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_29pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylewhite_A700">
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnBackToHomepageOne"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_15pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_15pxv"
+                android:singleLine="true"
+                android:text="@string/msg_back_to_homepag"
+                android:textAllCaps="false"
+                style="@style/btnSolidRoundedOutline" tools:text="@string/msg_back_to_homepag"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
