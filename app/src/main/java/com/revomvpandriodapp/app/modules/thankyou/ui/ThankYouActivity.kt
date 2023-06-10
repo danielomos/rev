@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.revomvpandriodapp.app.R
 import com.revomvpandriodapp.app.appcomponents.base.BaseActivity
 import com.revomvpandriodapp.app.databinding.ActivityThankYouBinding
+import com.revomvpandriodapp.app.modules.homedashb.ui.HomedashbActivity
 import com.revomvpandriodapp.app.modules.thankyou.`data`.viewmodel.ThankYouVM
 import kotlin.String
 import kotlin.Unit
@@ -21,7 +22,9 @@ class ThankYouActivity : BaseActivity<ActivityThankYouBinding>(R.layout.activity
 
   override fun setUpClicks(): Unit {
     binding.btnBackToHomepageOne.setOnClickListener {
-      // TODO please, add your navigation code here
+      val destIntent = HomedashbActivity.getIntent(this, null)
+      destIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+      startActivity(destIntent)
     }
   }
 

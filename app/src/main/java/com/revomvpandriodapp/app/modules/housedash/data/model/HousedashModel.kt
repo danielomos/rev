@@ -59,7 +59,7 @@ data class HousedashModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtTransferFundT: String? =
+  var txtLanguageOne: String? =
       MyApp.getInstance().resources.getString(R.string.msg_transfer_fund_t)
   ,
   /**
@@ -81,6 +81,6 @@ data class HousedashModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtLanguageOne: String? = MyApp.getInstance().resources.getString(R.string.lbl_recent_orders)
+  var txtLanguageTwo: String? = MyApp.getInstance().resources.getString(R.string.lbl_recent_orders)
 
 )

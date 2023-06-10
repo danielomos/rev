@@ -1,5 +1,11 @@
 package com.revomvpandriodapp.app.network
 
+import com.revomvpandriodapp.app.network.models.createaccept.CreateAcceptRequest
+import com.revomvpandriodapp.app.network.models.createaccept.CreateAcceptResponse
+import com.revomvpandriodapp.app.network.models.createcompleted.CreateCompletedRequest
+import com.revomvpandriodapp.app.network.models.createcompleted.CreateCompletedResponse
+import com.revomvpandriodapp.app.network.models.createdelivered.CreateDeliveredRequest
+import com.revomvpandriodapp.app.network.models.createdelivered.CreateDeliveredResponse
 import com.revomvpandriodapp.app.network.models.createemailsignup.CreateEmailSignupRequest
 import com.revomvpandriodapp.app.network.models.createemailsignup.CreateEmailSignupResponse
 import com.revomvpandriodapp.app.network.models.createemailsignup1.CreateEmailSignup1Request
@@ -10,6 +16,8 @@ import com.revomvpandriodapp.app.network.models.createphonesignup.CreatePhoneSig
 import com.revomvpandriodapp.app.network.models.createphonesignup.CreatePhoneSignupResponse
 import com.revomvpandriodapp.app.network.models.createphonesignup1.CreatePhoneSignup1Request
 import com.revomvpandriodapp.app.network.models.createphonesignup1.CreatePhoneSignup1Response
+import com.revomvpandriodapp.app.network.models.createpickup.CreatePickupRequest
+import com.revomvpandriodapp.app.network.models.createpickup.CreatePickupResponse
 import com.revomvpandriodapp.app.network.models.createrefill.CreateRefillRequest
 import com.revomvpandriodapp.app.network.models.createrefill.CreateRefillResponse
 import com.revomvpandriodapp.app.network.models.createsetup.CreateSetupRequest
@@ -20,6 +28,8 @@ import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalRequest
 import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalResponse
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateRequest
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
+import com.revomvpandriodapp.app.network.models.fetchall.FetchAllResponse
+import com.revomvpandriodapp.app.network.models.fetchall1.FetchAll1Response
 import com.revomvpandriodapp.app.network.models.fetchareas.FetchAreasResponse
 import com.revomvpandriodapp.app.network.models.fetchdetail.FetchDetailResponse
 import com.revomvpandriodapp.app.network.models.fetchdetails.FetchDetailsResponse
@@ -36,6 +46,34 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface RetrofitServices {
+  @POST("/api/customer/individual/order/completed")
+  suspend fun createCompleted(
+    @Header("Content-type") contentType: String?,
+    @Header("Authorization") authorization: String?,
+    @Body createCompletedRequest: CreateCompletedRequest?
+  ): CreateCompletedResponse
+
+  @POST("/api/distributor/retailer/delivered")
+  suspend fun createDelivered(
+    @Header("Content-type") contentType: String?,
+    @Header("Authorization") authorization: String?,
+    @Body createDeliveredRequest: CreateDeliveredRequest?
+  ): CreateDeliveredResponse
+
+  @POST("/api/distributor/retailer/pickup")
+  suspend fun createPickup(
+    @Header("Content-type") contentType: String?,
+    @Header("Authorization") authorization: String?,
+    @Body createPickupRequest: CreatePickupRequest?
+  ): CreatePickupResponse
+
+  @POST("/api/distributor/retailer/order/accept")
+  suspend fun createAccept(
+    @Header("Content-type") contentType: String?,
+    @Header("Authorization") authorization: String?,
+    @Body createAcceptRequest: CreateAcceptRequest?
+  ): CreateAcceptResponse
+
   @GET("/api/distributor/retailer/orders/{id}/")
   suspend fun fetchId(
     @Header("Content-type") contentType: String?,
@@ -43,12 +81,20 @@ interface RetrofitServices {
     @Query("id") id: String?
   ): FetchIdResponse
 
+  @GET("/api/distributor/retailer/order/all")
+  suspend fun fetchAll(@Header("Content-type") contentType: String?, @Header("Authorization")
+      authorization: String?): FetchAllResponse
+
   @GET("/api/customer/individual/order/{id}/")
   suspend fun fetchId1(
     @Header("Content-type") contentType: String?,
     @Header("Authorization") authorization: String?,
     @Query("id") id: String?
   ): FetchId1Response
+
+  @GET("/api/customer/individual/order/all")
+  suspend fun fetchAll1(@Header("content-Type") contentType: String?, @Header("Authorization")
+      authorization: String?): FetchAll1Response
 
   @GET("/api/distributor/retailer/profile/details")
   suspend fun fetchDetails(@Header("Content-type") contentType: String?, @Header("Authorization")

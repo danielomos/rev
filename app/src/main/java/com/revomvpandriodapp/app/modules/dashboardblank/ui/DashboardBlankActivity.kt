@@ -12,9 +12,9 @@ import com.revomvpandriodapp.app.constants.userType
 import com.revomvpandriodapp.app.databinding.ActivityDashboardBlankBinding
 import com.revomvpandriodapp.app.extensions.alert
 import com.revomvpandriodapp.app.extensions.neutralButton
-import com.revomvpandriodapp.app.modules.businessdashboardcontainer.ui.BusinessDashboardContainerActivity
+import com.revomvpandriodapp.app.modules.businessdashboardontainercontainer.ui.BusinessDashboardontainerContainerActivity
+import com.revomvpandriodapp.app.modules.dashboard4gasmantwo.ui.Dashboard4gasmantwoActivity
 import com.revomvpandriodapp.app.modules.dashboardblank.`data`.viewmodel.DashboardBlankVM
-import com.revomvpandriodapp.app.modules.gasmandashb.ui.GasmandashbActivity
 import com.revomvpandriodapp.app.modules.homedashb.ui.HomedashbActivity
 import kotlin.String
 import kotlin.Unit
@@ -59,13 +59,13 @@ class DashboardBlankActivity :
   }
 
   private fun onCreateCondition1(): Unit {
-    val destIntent = GasmandashbActivity.getIntent(this, null)
+    val destIntent = Dashboard4gasmantwoActivity.getIntent(this, null)
     startActivity(destIntent)
     finish()
   }
 
   private fun onCreateCondition2(): Unit {
-    val destIntent = BusinessDashboardContainerActivity.getIntent(this, null)
+    val destIntent = BusinessDashboardontainerContainerActivity.getIntent(this, null)
     startActivity(destIntent)
     finish()
   }

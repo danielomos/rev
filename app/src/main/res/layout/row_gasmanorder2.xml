@@ -3,7 +3,7 @@
     <data>
         <variable name="gasmanorder2RowModel" type="com.revomvpandriodapp.app.modules.housedash.data.model.Gasmanorder2RowModel"/>
     </data>
-    <LinearLayout android:gravity="center_horizontal"
+    <LinearLayout android:gravity="start"
         android:id="@+id/linearColumnellipsetwenty"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_marginBottom="@dimen/_1pxv"
                 android:layout_marginStart="@dimen/_1pxh"
                 android:layout_marginTop="@dimen/_1pxv"
-                android:layout_weight="0.53" android:layout_width="0dp" android:orientation="vertical">
+                android:layout_weight="0.4" android:layout_width="0dp" android:orientation="vertical">
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtWeight"
                     android:layout_height="wrap_content"
@@ -55,16 +55,17 @@
                 android:layout_marginBottom="@dimen/_4pxv"
                 android:layout_marginStart="@dimen/_1pxh"
                 android:layout_marginTop="@dimen/_4pxv"
-                android:layout_weight="0.36" android:layout_width="0dp"
+                android:layout_weight="0.49" android:layout_width="0dp"
                 android:paddingBottom="@dimen/_5pxv"
-                android:paddingEnd="@dimen/_14pxh"
+                android:paddingEnd="@dimen/_30pxh"
                 android:paddingStart="@dimen/_9pxh"
                 android:paddingTop="@dimen/_5pxv"
                 android:singleLine="true"
                 android:text="@{gasmanorder2RowModel.txtFrame247}"
                 style="@style/txtSolidRounded" tools:text="@string/lbl_2030"/>
         </LinearLayout>
-        <LinearLayout android:id="@+id/linearRowdetails"
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearRowdetails"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_20pxv"
             android:layout_marginEnd="@dimen/_20pxh"
@@ -96,7 +97,7 @@
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnDetails"
                 android:layout_height="@dimen/_27pxv"
-                android:layout_marginStart="@dimen/_175pxh"
+                android:layout_marginStart="@dimen/_149pxh"
                 android:layout_width="@dimen/_100pxh"
                 android:paddingBottom="@dimen/_5pxv"
                 android:paddingEnd="@dimen/_30pxh"

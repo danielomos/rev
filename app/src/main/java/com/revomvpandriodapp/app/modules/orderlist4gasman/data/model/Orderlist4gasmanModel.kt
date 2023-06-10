@@ -14,7 +14,7 @@ data class Orderlist4gasmanModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtNew: String? = MyApp.getInstance().resources.getString(R.string.lbl_new2)
+  var txtNew: String? = MyApp.getInstance().resources.getString(R.string.lbl_new)
   ,
   /**
    * TODO Replace with dynamic value

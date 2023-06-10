@@ -101,7 +101,7 @@
                     android:id="@+id/txtLanguageThree"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_1pxv"
-                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginStart="@dimen/_35pxh"
                     android:layout_weight="0.46"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{gasrequestVM.gasrequestModel.txtLanguageThree}"

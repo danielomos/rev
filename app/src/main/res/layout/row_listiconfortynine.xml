@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="listiconfortynineRowModel" type="com.revomvpandriodapp.app.modules.businessdashboard.data.model.ListiconfortynineRowModel"/>
+        <variable name="listiconfortynineRowModel" type="com.revomvpandriodapp.app.modules.businessdashboardontainer.data.model.ListiconfortynineRowModel"/>
     </data>
     <LinearLayout android:id="@+id/linearRowiconfortynine"
         android:layout_height="wrap_content"

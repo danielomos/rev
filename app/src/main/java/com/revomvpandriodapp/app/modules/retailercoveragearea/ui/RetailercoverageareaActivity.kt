@@ -35,7 +35,8 @@ class RetailercoverageareaActivity :
     BaseActivity<ActivityRetailercoverageareaBinding>(R.layout.activity_retailercoveragearea) {
   private val viewModel: RetailercoverageareaVM by viewModels<RetailercoverageareaVM>()
 
-  private val REQUEST_CODE_RETAILER_SETUP_ACTIVITY: Int = 522
+  private val REQUEST_CODE_RETAILER_SETUP_ACTIVITY: Int = 481
+
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -68,7 +69,7 @@ class RetailercoverageareaActivity :
     item: AreaslistRowModel
   ): Unit {
     when(view.id) {
-      R.id.txtLanguage ->  {
+      R.id.txtLanguage -> {
         val destBundle = Bundle()
         destBundle.putString("areaName",Gson().toJson(viewModel.fetchAreasLiveData.value?.getSuccessResponse()?.payload?.get(position)?.areaName))
         val destIntent = RetailerSetupActivity.getIntent(this, destBundle)
@@ -77,14 +78,14 @@ class RetailercoverageareaActivity :
     }
   }
 
-  override fun addObservers() {
+  override fun addObservers(): Unit {
     var progressDialog : AlertDialog? = null
     viewModel.progressLiveData.observe(this@RetailercoverageareaActivity) {
       if(it) {
         progressDialog?.dismiss()
         progressDialog = null
         progressDialog = this@RetailercoverageareaActivity.showProgressDialog()
-      } else  {
+      } else {
         progressDialog?.dismiss()
       }
     }
@@ -92,17 +93,17 @@ class RetailercoverageareaActivity :
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessFetchAreas(it)
-      } else if(it is ErrorResponse)  {
+      } else if(it is ErrorResponse) {
         onErrorFetchAreas(it.data ?:Exception())
       }
     }
   }
 
-  private fun onSuccessFetchAreas(response: SuccessResponse<FetchAreasResponse>) {
+  private fun onSuccessFetchAreas(response: SuccessResponse<FetchAreasResponse>): Unit {
     viewModel.bindFetchAreasResponse(response.data)
   }
 
-  private fun onErrorFetchAreas(exception: Exception) {
+  private fun onErrorFetchAreas(exception: Exception): Unit {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -110,7 +111,7 @@ class RetailercoverageareaActivity :
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-            else JSONObject()
+        else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_error_loading_business_area)
         this@RetailercoverageareaActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {

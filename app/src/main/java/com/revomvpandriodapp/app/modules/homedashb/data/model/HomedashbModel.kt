@@ -59,7 +59,7 @@ data class HomedashbModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtTransferFundT: String? =
+  var txtLanguageTwo: String? =
       MyApp.getInstance().resources.getString(R.string.msg_transfer_fund_t)
   ,
   /**

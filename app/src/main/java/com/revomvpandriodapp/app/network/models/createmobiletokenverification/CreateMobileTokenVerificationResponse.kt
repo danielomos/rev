@@ -11,15 +11,6 @@ data class CreateMobileTokenVerificationResponse(
 	val payload: CreateMobileTokenVerificationResponsePayload? = null
 )
 
-data class CreateMobileTokenVerificationResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
-)
-
 data class CreateMobileTokenVerificationResponsePayload(
 
 	@field:SerializedName("message")
@@ -27,4 +18,13 @@ data class CreateMobileTokenVerificationResponsePayload(
 
 	@field:SerializedName("userId")
 	val userId: Int? = null
+)
+
+data class CreateMobileTokenVerificationResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
 )

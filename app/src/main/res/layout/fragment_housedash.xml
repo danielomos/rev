@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent" android:orientation="vertical">
         <LinearLayout android:gravity="center_horizontal"
-            android:id="@+id/linearColumncalculator"
+            android:id="@+id/linearColumncamera"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" android:orientation="vertical">
             <LinearLayout android:gravity="center_horizontal"
@@ -41,13 +41,12 @@
                                 <TextView android:ellipsize="end"
                                     android:id="@+id/txtHouseHoldTextF"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="@dimen/_1pxv"
                                     android:layout_marginTop="@dimen/_1pxv"
                                     android:layout_weight="0.43"
                                     android:layout_width="0dp"
                                     android:singleLine="true"
                                     android:text="@{housedashVM.housedashModel.txtHouseHoldTextF}"
-                                    style="@style/txtRobotoromanmedium20" tools:text="@string/lbl_hello2"/>
+                                    style="@style/txtRobotoromanmedium20_1" tools:text="@string/lbl_hello2"/>
                                 <TextView android:ellipsize="end"
                                     android:id="@+id/txtHouseHoldTextFOne"
                                     android:layout_height="wrap_content"
@@ -57,7 +56,7 @@
                                     android:layout_width="0dp"
                                     android:singleLine="true"
                                     android:text="@{housedashVM.housedashModel.txtHouseHoldTextFOne}"
-                                    style="@style/txtRobotoromanmedium20" tools:text="@string/lbl_seun"/>
+                                    style="@style/txtRobotoromanmedium20_1" tools:text="@string/lbl_seun"/>
                                 <ImageView
                                     android:id="@+id/imageNotowavinghan"
                                     android:layout_height="@dimen/_22pxh"
@@ -199,19 +198,20 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout android:id="@+id/linearRowcalculator"
+            <LinearLayout android:id="@+id/linearRowcamera"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_9pxh"
                 android:layout_marginStart="@dimen/_7pxh"
-                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_marginTop="@dimen/_2pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <LinearLayout android:gravity="center_horizontal"
                     android:id="@+id/linearPaybill"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:orientation="vertical" style="@style/groupStylecornerRadius_3">
-                    <ImageView android:id="@+id/imageCalculator"
+                    <ImageView android:id="@+id/imageCamera"
                         android:layout_gravity="center_horizontal"
                         android:layout_height="@dimen/_27pxh"
                         android:layout_marginEnd="@dimen/_30pxh"
@@ -233,19 +233,20 @@
                         android:text="@{housedashVM.housedashModel.txtFundWallet}"
                         style="@style/txtManropebold20" tools:text="@string/lbl_fund_wallet"/>
                     <TextView android:gravity="center_horizontal"
-                        android:id="@+id/txtTransferFundT"
+                        android:id="@+id/txtLanguageOne"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_37pxv"
                         android:layout_marginEnd="@dimen/_30pxh"
                         android:layout_marginStart="@dimen/_30pxh"
                         android:layout_marginTop="@dimen/_5pxv"
                         android:layout_width="match_parent"
-                        android:text="@{housedashVM.housedashModel.txtTransferFundT}"
+                        android:text="@{housedashVM.housedashModel.txtLanguageOne}"
                         style="@style/txtManroperegular16" tools:text="@string/msg_transfer_fund_t"/>
                 </LinearLayout>
                 <LinearLayout android:gravity="center_horizontal"
                     android:id="@+id/linearBuyairtime"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
                     android:layout_marginStart="@dimen/_6pxh"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
@@ -284,7 +285,7 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <FrameLayout android:id="@+id/frameStacklanguageOne"
+        <FrameLayout android:id="@+id/frameStacklanguageTwo"
             android:layout_gravity="center_horizontal"
             android:layout_height="@dimen/_20pxv"
             android:layout_marginEnd="@dimen/_17pxh"
@@ -318,13 +319,13 @@
                 </FrameLayout>
             </HorizontalScrollView>
             <TextView android:ellipsize="end"
-                android:id="@+id/txtLanguageOne"
+                android:id="@+id/txtLanguageTwo"
                 android:layout_gravity="start"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:layout_width="wrap_content"
                 android:singleLine="true"
-                android:text="@{housedashVM.housedashModel.txtLanguageOne}"
+                android:text="@{housedashVM.housedashModel.txtLanguageTwo}"
                 style="@style/txtRobotoromanmedium17_1" tools:text="@string/lbl_recent_orders"/>
         </FrameLayout>
         <androidx.recyclerview.widget.RecyclerView

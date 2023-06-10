@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.revomvpandriodapp.app.appcomponents.utility.PreferenceHelper
-import com.revomvpandriodapp.app.modules.homedashb.`data`.model.Gasmanorder1RowModel
+import com.revomvpandriodapp.app.modules.homedashb.`data`.model.GasmanorderRowModel
 import com.revomvpandriodapp.app.modules.homedashb.`data`.model.HomedashbModel
 import com.revomvpandriodapp.app.network.models.fetchdetails1.FetchDetails1Response
 import com.revomvpandriodapp.app.network.repository.NetworkRepository
@@ -23,7 +23,7 @@ class HomedashbVM : ViewModel(), KoinComponent {
   var navArguments: Bundle? = null
 
 
-  val gasmanorderList: MutableLiveData<MutableList<Gasmanorder1RowModel>> =
+  val gasmanorderList: MutableLiveData<MutableList<GasmanorderRowModel>> =
       MutableLiveData(mutableListOf())
 
 
@@ -52,7 +52,7 @@ class HomedashbVM : ViewModel(), KoinComponent {
   fun bindFetchDetails1Response(response: FetchDetails1Response) {
     val homedashbModelValue = homedashbModel.value ?:HomedashbModel()
     val recyclerGasmanorder = response.payload?.customerOrders?.map {
-      Gasmanorder1RowModel(
+      GasmanorderRowModel(
       txtPendingTextFor = it?.orderStatus.toString(),
       txtWeight = it?.orderKg.toString(),
       txt12KgTextFormFiOne = it?.orderAmount.toString(),

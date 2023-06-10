@@ -35,7 +35,7 @@ class AreaListingActivity : BaseActivity<ActivityAreaListingBinding>(R.layout.ac
     {
   private val viewModel: AreaListingVM by viewModels<AreaListingVM>()
 
-  private val REQUEST_CODE_SUPLIST_ACTIVITY: Int = 143
+  private val REQUEST_CODE_SUPLIST_ACTIVITY: Int = 361
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

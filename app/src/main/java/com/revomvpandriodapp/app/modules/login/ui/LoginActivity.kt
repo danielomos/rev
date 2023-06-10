@@ -35,9 +35,9 @@ import retrofit2.HttpException
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
   private val viewModel: LoginVM by viewModels<LoginVM>()
 
-  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 635
+  private val REQUEST_CODE_DASHBOARD_BLANK_ACTIVITY: Int = 156
 
-  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 743
+  private val REQUEST_CODE_SIGNUP_ACCOUNT_OPTIN_ACTIVITY: Int = 962
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

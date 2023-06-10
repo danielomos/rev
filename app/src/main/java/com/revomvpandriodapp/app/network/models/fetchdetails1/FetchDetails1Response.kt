@@ -11,54 +11,6 @@ data class FetchDetails1Response(
 	val payload: FetchDetails1ResponsePayload? = null
 )
 
-data class FetchDetails1ResponseMetadata(
-
-	@field:SerializedName("traceId")
-	val traceId: String? = null,
-
-	@field:SerializedName("timestamp")
-	val timestamp: String? = null
-)
-
-data class FetchDetails1ResponsePayloadCustomerOrdersItem(
-
-	@field:SerializedName("cusOrderId")
-	val cusOrderId: String? = null,
-
-	@field:SerializedName("orderAmount")
-	val orderAmount: String? = null,
-
-	@field:SerializedName("pickUpKg")
-	val pickUpKg: String? = null,
-
-	@field:SerializedName("orderKg")
-	val orderKg: String? = null,
-
-	@field:SerializedName("orderSelPhoneNumber")
-	val orderSelPhoneNumber: String? = null,
-
-	@field:SerializedName("orderSelFullName")
-	val orderSelFullName: String? = null,
-
-	@field:SerializedName("orderStatus")
-	val orderStatus: String? = null,
-
-	@field:SerializedName("orderSelAddress")
-	val orderSelAddress: String? = null,
-
-	@field:SerializedName("orderCode")
-	val orderCode: String? = null,
-
-	@field:SerializedName("orderCreatedDate")
-	val orderCreatedDate: String? = null,
-
-	@field:SerializedName("deliveryKg")
-	val deliveryKg: String? = null,
-
-	@field:SerializedName("orderSellerShopName")
-	val orderSellerShopName: String? = null
-)
-
 data class FetchDetails1ResponsePayload(
 
 	@field:SerializedName("serialNumber")
@@ -111,4 +63,52 @@ data class FetchDetails1ResponsePayload(
 
 	@field:SerializedName("email")
 	val email: String? = null
+)
+
+data class FetchDetails1ResponseMetadata(
+
+	@field:SerializedName("traceId")
+	val traceId: String? = null,
+
+	@field:SerializedName("timestamp")
+	val timestamp: String? = null
+)
+
+data class FetchDetails1ResponsePayloadCustomerOrdersItem(
+
+	@field:SerializedName("cusOrderId")
+	val cusOrderId: String? = null,
+
+	@field:SerializedName("orderAmount")
+	val orderAmount: String? = null,
+
+	@field:SerializedName("pickUpKg")
+	val pickUpKg: String? = null,
+
+	@field:SerializedName("orderKg")
+	val orderKg: String? = null,
+
+	@field:SerializedName("orderSelPhoneNumber")
+	val orderSelPhoneNumber: String? = null,
+
+	@field:SerializedName("orderSelFullName")
+	val orderSelFullName: String? = null,
+
+	@field:SerializedName("orderStatus")
+	val orderStatus: String? = null,
+
+	@field:SerializedName("orderSelAddress")
+	val orderSelAddress: String? = null,
+
+	@field:SerializedName("orderCode")
+	val orderCode: String? = null,
+
+	@field:SerializedName("orderCreatedDate")
+	val orderCreatedDate: String? = null,
+
+	@field:SerializedName("deliveryKg")
+	val deliveryKg: String? = null,
+
+	@field:SerializedName("orderSellerShopName")
+	val orderSellerShopName: String? = null
 )

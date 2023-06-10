@@ -5,6 +5,12 @@ import com.revomvpandriodapp.app.appcomponents.di.MyApp
 import com.revomvpandriodapp.app.extensions.NoInternetConnection
 import com.revomvpandriodapp.app.extensions.isOnline
 import com.revomvpandriodapp.app.network.RetrofitServices
+import com.revomvpandriodapp.app.network.models.createaccept.CreateAcceptRequest
+import com.revomvpandriodapp.app.network.models.createaccept.CreateAcceptResponse
+import com.revomvpandriodapp.app.network.models.createcompleted.CreateCompletedRequest
+import com.revomvpandriodapp.app.network.models.createcompleted.CreateCompletedResponse
+import com.revomvpandriodapp.app.network.models.createdelivered.CreateDeliveredRequest
+import com.revomvpandriodapp.app.network.models.createdelivered.CreateDeliveredResponse
 import com.revomvpandriodapp.app.network.models.createemailsignup.CreateEmailSignupRequest
 import com.revomvpandriodapp.app.network.models.createemailsignup.CreateEmailSignupResponse
 import com.revomvpandriodapp.app.network.models.createemailsignup1.CreateEmailSignup1Request
@@ -15,6 +21,8 @@ import com.revomvpandriodapp.app.network.models.createphonesignup.CreatePhoneSig
 import com.revomvpandriodapp.app.network.models.createphonesignup.CreatePhoneSignupResponse
 import com.revomvpandriodapp.app.network.models.createphonesignup1.CreatePhoneSignup1Request
 import com.revomvpandriodapp.app.network.models.createphonesignup1.CreatePhoneSignup1Response
+import com.revomvpandriodapp.app.network.models.createpickup.CreatePickupRequest
+import com.revomvpandriodapp.app.network.models.createpickup.CreatePickupResponse
 import com.revomvpandriodapp.app.network.models.createrefill.CreateRefillRequest
 import com.revomvpandriodapp.app.network.models.createrefill.CreateRefillResponse
 import com.revomvpandriodapp.app.network.models.createsetup.CreateSetupRequest
@@ -25,6 +33,8 @@ import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalRequest
 import com.revomvpandriodapp.app.network.models.createtotal.CreateTotalResponse
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateRequest
 import com.revomvpandriodapp.app.network.models.createupdate.CreateUpdateResponse
+import com.revomvpandriodapp.app.network.models.fetchall.FetchAllResponse
+import com.revomvpandriodapp.app.network.models.fetchall1.FetchAll1Response
 import com.revomvpandriodapp.app.network.models.fetchareas.FetchAreasResponse
 import com.revomvpandriodapp.app.network.models.fetchdetail.FetchDetailResponse
 import com.revomvpandriodapp.app.network.models.fetchdetails.FetchDetailsResponse
@@ -46,6 +56,82 @@ class NetworkRepository : KoinComponent {
 
   private val errorMessage: String = "Something went wrong."
 
+  suspend fun createCompleted(
+    contentType: String?,
+    authorization: String?,
+    createCompletedRequest: CreateCompletedRequest?
+  ): Response<CreateCompletedResponse> = try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.createCompleted(contentType, authorization,
+          createCompletedRequest))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
+  suspend fun createDelivered(
+    contentType: String?,
+    authorization: String?,
+    createDeliveredRequest: CreateDeliveredRequest?
+  ): Response<CreateDeliveredResponse> = try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.createDelivered(contentType, authorization,
+          createDeliveredRequest))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
+  suspend fun createPickup(
+    contentType: String?,
+    authorization: String?,
+    createPickupRequest: CreatePickupRequest?
+  ): Response<CreatePickupResponse> = try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.createPickup(contentType, authorization,
+          createPickupRequest))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
+  suspend fun createAccept(
+    contentType: String?,
+    authorization: String?,
+    createAcceptRequest: CreateAcceptRequest?
+  ): Response<CreateAcceptResponse> = try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.createAccept(contentType, authorization,
+          createAcceptRequest))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
   suspend fun fetchId(
     contentType: String?,
     authorization: String?,
@@ -64,6 +150,21 @@ class NetworkRepository : KoinComponent {
     ErrorResponse(e.message ?:errorMessage, e)
   }
 
+  suspend fun fetchAll(contentType: String?, authorization: String?): Response<FetchAllResponse> =
+      try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.fetchAll(contentType, authorization))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
   suspend fun fetchId1(
     contentType: String?,
     authorization: String?,
@@ -72,6 +173,21 @@ class NetworkRepository : KoinComponent {
     val isOnline = MyApp.getInstance().isOnline()
     if(isOnline) {
       SuccessResponse(retrofitServices.fetchId1(contentType, authorization, id))
+    } else {
+      val internetException =
+          NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))
+      ErrorResponse(internetException.message ?:errorMessage, internetException)
+    }
+  } catch(e:Exception) {
+    e.printStackTrace()
+    ErrorResponse(e.message ?:errorMessage, e)
+  }
+
+  suspend fun fetchAll1(contentType: String?, authorization: String?): Response<FetchAll1Response> =
+      try {
+    val isOnline = MyApp.getInstance().isOnline()
+    if(isOnline) {
+      SuccessResponse(retrofitServices.fetchAll1(contentType, authorization))
     } else {
       val internetException =
           NoInternetConnection(MyApp.getInstance().getString(R.string.no_internet_connection))

@@ -4,6 +4,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import com.revomvpandriodapp.app.R
 import com.revomvpandriodapp.app.appcomponents.base.BaseFragment
+import com.revomvpandriodapp.app.appcomponents.views.ImagePickerFragmentDialog
 import com.revomvpandriodapp.app.databinding.FragmentHousedashBinding
 import com.revomvpandriodapp.app.modules.housedash.`data`.model.Gasmanorder2RowModel
 import com.revomvpandriodapp.app.modules.housedash.`data`.viewmodel.HousedashVM
@@ -33,6 +34,14 @@ class HousedashFragment : BaseFragment<FragmentHousedashBinding>(R.layout.fragme
   }
 
   override fun setUpClicks(): Unit {
+
+
+    binding.imageCamera.setOnClickListener {
+      ImagePickerFragmentDialog().show(childFragmentManager)
+      { path ->//TODO HANDLE DATA
+      }
+
+    }
   }
 
   fun onClickRecyclerGasmanorder(

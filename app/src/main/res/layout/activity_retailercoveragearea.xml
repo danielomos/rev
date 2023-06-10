@@ -9,32 +9,42 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_50">
-        <ImageView android:id="@+id/imageArrowleft"
-            android:layout_height="@dimen/_12pxh"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_17pxh"
             android:layout_marginStart="@dimen/_17pxh"
-            android:layout_marginTop="@dimen/_36pxv"
-            android:layout_width="@dimen/_6pxh"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_arrowleft"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
-        <TextView android:ellipsize="end"
-            android:id="@+id/txtSelectBusiness"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_16pxh"
-            android:layout_marginStart="@dimen/_16pxh"
-            android:layout_marginTop="@dimen/_31pxv"
-            android:layout_width="match_parent"
-            android:singleLine="true"
-            android:text="@{retailercoverageareaVM.retailercoverageareaModel.txtSelectBusiness}"
-            style="@style/txtRobotoromanmedium24" tools:text="@string/msg_select_business"/>
+            android:layout_marginTop="@dimen/_29pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowarrowleft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageArrowleft"
+                    android:layout_height="@dimen/_12pxh"
+                    android:layout_marginBottom="@dimen/_5pxv"
+                    android:layout_marginTop="@dimen/_6pxv"
+                    android:layout_width="@dimen/_6pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowleft"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSelectBusiness"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_74pxh"
+                    android:layout_weight="0.97"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{retailercoverageareaVM.retailercoverageareaModel.txtSelectBusiness}"
+                    style="@style/txtRobotoromanmedium20" tools:text="@string/msg_select_business"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
         <androidx.recyclerview.widget.RecyclerView
             android:gravity="center_horizontal"
             android:id="@+id/recyclerAreaslist"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16pxh"
             android:layout_marginStart="@dimen/_16pxh"
-            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_marginTop="@dimen/_75pxv"
             android:layout_width="match_parent"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

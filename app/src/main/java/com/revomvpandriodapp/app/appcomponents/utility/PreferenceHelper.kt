@@ -59,6 +59,24 @@ class PreferenceHelper {
 
   fun getOnBoarded(): Int? = sharedPreference.getInt("onBoarded", 0)
 
+  fun setDeliveryKg(paramValue: String?): Unit {
+    with(sharedPreference.edit()) {
+      this.putString("deliveryKg", paramValue!!)
+      apply()
+    }
+  }
+
+  fun getDeliveryKg(): String? = sharedPreference.getString("deliveryKg", null)
+
+  fun setOrderId(paramValue: String?): Unit {
+    with(sharedPreference.edit()) {
+      this.putString("orderId", paramValue!!)
+      apply()
+    }
+  }
+
+  fun getOrderId(): String? = sharedPreference.getString("orderId", null)
+
   fun setSellerAddress(paramValue: String?): Unit {
     with(sharedPreference.edit()) {
       this.putString("sellerAddress", paramValue!!)
@@ -67,6 +85,15 @@ class PreferenceHelper {
   }
 
   fun getSellerAddress(): String? = sharedPreference.getString("sellerAddress", null)
+
+  fun setPayload(paramValue: String?): Unit {
+    with(sharedPreference.edit()) {
+      this.putString("payload", paramValue!!)
+      apply()
+    }
+  }
+
+  fun getPayload(): String? = sharedPreference.getString("payload", null)
 
   fun setType(paramValue: String?): Unit {
     with(sharedPreference.edit()) {
@@ -112,13 +139,4 @@ class PreferenceHelper {
   }
 
   fun getUserType(): String? = sharedPreference.getString("userType", null)
-
-  fun setPayload(paramValue: String?): Unit {
-    with(sharedPreference.edit()) {
-      this.putString("payload", paramValue!!)
-      apply()
-    }
-  }
-
-  fun getPayload(): String? = sharedPreference.getString("payload", null)
 }

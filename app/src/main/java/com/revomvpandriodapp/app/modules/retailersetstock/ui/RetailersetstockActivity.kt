@@ -1,5 +1,8 @@
 package com.revomvpandriodapp.app.modules.retailersetstock.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
@@ -43,14 +46,14 @@ class RetailersetstockActivity :
     }
   }
 
-  override fun addObservers() {
+  override fun addObservers(): Unit {
     var progressDialog : AlertDialog? = null
     viewModel.progressLiveData.observe(this@RetailersetstockActivity) {
       if(it) {
         progressDialog?.dismiss()
         progressDialog = null
         progressDialog = this@RetailersetstockActivity.showProgressDialog()
-      } else  {
+      } else {
         progressDialog?.dismiss()
       }
     }
@@ -58,13 +61,13 @@ class RetailersetstockActivity :
       if(it is SuccessResponse) {
         val response = it.getContentIfNotHandled()
         onSuccessCreateUpdate(it)
-      } else if(it is ErrorResponse)  {
+      } else if(it is ErrorResponse) {
         onErrorCreateUpdate(it.data ?:Exception())
       }
     }
   }
 
-  private fun onSuccessCreateUpdate(response: SuccessResponse<CreateUpdateResponse>) {
+  private fun onSuccessCreateUpdate(response: SuccessResponse<CreateUpdateResponse>): Unit {
     this@RetailersetstockActivity.alert(MyApp.getInstance().getString(R.string.lbl_successful),
     MyApp.getInstance().getString(R.string.msg_stock_successful_set)) {
       neutralButton {
@@ -73,7 +76,7 @@ class RetailersetstockActivity :
     viewModel.bindCreateUpdateResponse(response.data)
   }
 
-  private fun onErrorCreateUpdate(exception: Exception) {
+  private fun onErrorCreateUpdate(exception: Exception): Unit {
     when(exception) {
       is NoInternetConnection -> {
         Snackbar.make(binding.root, exception.message?:"", Snackbar.LENGTH_LONG).show()
@@ -81,7 +84,7 @@ class RetailersetstockActivity :
       is HttpException -> {
         val errorBody = exception.response()?.errorBody()?.string()
         val errorObject = if (errorBody != null  && errorBody.isJSONObject()) JSONObject(errorBody)
-            else JSONObject()
+        else JSONObject()
         val errMessage = MyApp.getInstance().getString(R.string.msg_error_setting_stock)
         this@RetailersetstockActivity.alert(MyApp.getInstance().getString(R.string.lbl_error),errMessage) {
           neutralButton {
@@ -94,5 +97,11 @@ class RetailersetstockActivity :
   companion object {
     const val TAG: String = "RETAILERSETSTOCK_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, RetailersetstockActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }
